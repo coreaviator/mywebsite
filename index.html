@@ -70,22 +70,6 @@
  	   </div>
 	</div>
 
-	<!-- SCROLL SCRIPT -->
-	<script>
-    window.addEventListener('scroll', function () {
-        const logo = document.getElementById('stickyLogo');
-        const triggerHeight = 300; // Adjust this to match your banner height
-
-        if (window.scrollY > triggerHeight) {
-            logo.classList.remove('top-16');
-            logo.classList.add('top-4');
-        } else {
-            logo.classList.remove('top-4');
-            logo.classList.add('top-16');
-        }
-    });
-</script>
-
 	<!-- Hero Image -->
 	<div class="w-full h-96 bg-cover bg-center" style="background-image: url('images/1.png');">
    	 <div class="container mx-auto h-full flex items-center justify-center">
@@ -313,5 +297,22 @@
             });
         });
     </script>
+
+		<!-- SCROLL SCRIPT -->
+	<script>
+    window.addEventListener('scroll', function () {
+        const logo = document.getElementById('stickyLogo');
+        const triggerHeight = 300; // Adjust this to match your banner height
+
+        if (window.scrollY > triggerHeight) {
+            logo.classList.remove('top-16');
+            logo.classList.add('top-4');
+        } else {
+            logo.classList.remove('top-4');
+            logo.classList.add('top-16');
+        }
+    });
+</script>
+	
 </body>
 </html>
