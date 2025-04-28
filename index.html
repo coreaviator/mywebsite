@@ -55,18 +55,18 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="bg-navy-banner shadow sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <img src="images/logo.png" alt="Logo" class="w-16 h-16">
-      <nav class="space-x-6 font-medium">
-        <a href="#" class="hover:text-gray-300">Home</a>
-        <a href="#about" class="hover:text-gray-300">About</a>
-        <a href="#training" class="hover:text-gray-300">Training</a>
-        <a href="#faq" class="hover:text-gray-300">FAQ</a>
-        <a href="#contact" class="hover:text-gray-300">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="bg-navy-banner shadow sticky top-0 z-50 h-16"> <!-- Set height using Tailwind -->
+  <div class="container mx-auto px-6 flex justify-between items-center h-full"> <!-- Use h-full to fill header height -->
+    <img src="images/logo.png" alt="Logo" class="h-full w-auto"> <!-- Use h-full for logo -->
+    <nav class="space-x-6 font-medium">
+      <a href="#" class="hover:text-gray-300">Home</a>
+      <a href="#about" class="hover:text-gray-300">About</a>
+      <a href="#training" class="hover:text-gray-300">Training</a>
+      <a href="#faq" class="hover:text-gray-300">FAQ</a>
+      <a href="#contact" class="hover:text-gray-300">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section class="hero-bg h-[100vh] flex items-center justify-center text-white text-center">
@@ -77,34 +77,56 @@
     </div>
   </section>
 
-  <!-- Training Tabs Section -->
-  <section id="training" class="bg-gray-700 py-16 px-4">
-    <div class="container mx-auto">
-      <h2 class="text-4xl font-bold mb-10 text-center">Training Programs</h2>
-      <div class="flex flex-wrap justify-center mb-6 border-b border-gray-300">
-        <div class="tab active px-6 py-3 text-lg" data-tab="learn-to-fly">Learn to Fly</div>
-        <div class="tab px-6 py-3 text-lg" data-tab="private-pilot">Private Pilot</div>
-        <div class="tab px-6 py-3 text-lg" data-tab="advanced-ratings">Advanced Ratings</div>
-        <div class="tab px-6 py-3 text-lg" data-tab="rusty-pilot">Rusty Pilot</div>
-      </div>
-      <div id="learn-to-fly" class="tab-content active p-6 bg-gray-700 rounded shadow-md">
-        <h3 class="text-2xl font-semibold mb-4">Learn to Fly Program</h3>
-        <p>Experience the thrill of your first flight. Our beginner program includes an introductory flight lesson, ground school basics, simulator time, and essential course materials.</p>
-      </div>
-      <div id="private-pilot" class="tab-content p-6 bg-gray-700 rounded shadow-md">
-        <h3 class="text-2xl font-semibold mb-4">Private Pilot License</h3>
-        <p>Become a certified pilot with a structured curriculum covering flight hours, exams, and practical training. We prepare you every step of the way.</p>
-      </div>
-      <div id="advanced-ratings" class="tab-content p-6 bg-gray-700 rounded shadow-md">
-        <h3 class="text-2xl font-semibold mb-4">Advanced Ratings</h3>
-        <p>Pursue advanced certifications like Instrument or Commercial Pilot Licenses. Ideal for those serious about aviation careers.</p>
-      </div>
-      <div id="rusty-pilot" class="tab-content p-6 bg-gray-700 rounded shadow-md">
-        <h3 class="text-2xl font-semibold mb-4">Rusty Pilot Program</h3>
-        <p>Ready to fly again? Brush up on regulations, procedures, and hands-on flying with our experienced instructors.</p>
-      </div>
+<!-- Training Tabs Section -->
+<section id="training" class="bg-gray-700 py-16 px-4">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold mb-10 text-center">Training Programs</h2>
+    <div class="flex flex-wrap justify-center mb-6 border-b border-gray-300">
+      <div class="tab active px-6 py-3 text-lg bg-gray-600 hover:bg-gray-500" data-tab="learn-to-fly">Learn to Fly</div>
+      <div class="tab px-6 py-3 text-lg bg-gray-700 hover:bg-gray-600" data-tab="private-pilot">Private Pilot</div>
+      <div class="tab px-6 py-3 text-lg bg-gray-700 hover:bg-gray-600" data-tab="advanced-ratings">Advanced Ratings</div>
+      <div class="tab px-6 py-3 text-lg bg-gray-700 hover:bg-gray-600" data-tab="rusty-pilot">Rusty Pilot</div>
+    <div id="learn-to-fly" class="tab-content active p-6 bg-gray-600 rounded shadow-md">
+      <h3 class="text-2xl font-semibold mb-4">Learn to Fly Program</h3>
+      <p>Experience the thrill of your first flight. Our beginner program includes an introductory flight lesson, ground school basics, simulator time, and essential course materials.</p>
     </div>
-  </section>
+    <div id="private-pilot" class="tab-content p-6 bg-gray-600 rounded shadow-md hidden">
+      <h3 class="text-2xl font-semibold mb-4">Private Pilot License</h3>
+      <p>Become a certified pilot with a structured curriculum covering flight hours, exams, and practical training. We prepare you every step of the way.</p>
+    </div>
+    <div id="advanced-ratings" class="tab-content p-6 bg-gray-600 rounded shadow-md hidden">
+      <h3 class="text-2xl font-semibold mb-4">Advanced Ratings</h3>
+      <p>Pursue advanced certifications like Instrument or Commercial Pilot Licenses. Ideal for those serious about aviation careers.</p>
+    </div>
+    <div id="rusty-pilot" class="tab-content p-6 bg-gray-600 rounded shadow-md hidden">
+      <h3 class="text-2xl font-semibold mb-4">Rusty Pilot Program</h3>
+      <p>Ready to fly again? Brush up on regulations, procedures, and hands-on flying with our experienced instructors.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs and hide all tab contents
+      tabs.forEach(t => {
+        t.classList.remove('active', 'bg-gray-600');
+        t.classList.add('bg-gray-700'); // Set inactive background color
+      });
+      tabContents.forEach(content => {
+        content.classList.add('hidden'); // Hide all tab contents
+      });
+
+      // Add active class to the clicked tab and show corresponding content
+      tab.classList.add('active', 'bg-gray-600'); // Set active background color
+      const activeTabContent = document.getElementById(tab.getAttribute('data-tab'));
+      activeTabContent.classList.remove('hidden'); // Show the corresponding content
+    });
+  });
+</script>
 
   <!-- About Section -->
   <section id="about" class="bg-gray-700 py-16 px-4">
@@ -120,44 +142,71 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section id="faq" class="bg-gray-100 py-16 px-4">
-    <div class="container mx-auto">
-      <h2 class="text-4xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-      <div class="space-y-6">
-        <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer">
-          <h3 class="text-xl font-semibold">How much does it cost to get a pilot certificate?</h3>
-          <div class="faq-answer mt-2 text-gray-300">
-            <p>On average, $14,000. The cost of obtaining a pilot certificate varies depending on several factors, including the type of certificate, how quickly you progress through training, and how frequently you fly. The cost covers aircraft rental, instructor fees, study materials, and examination costs. We can create a customized training plan to fit your budget.</p>
-          </div>
+<!-- FAQ Section -->
+<section id="faq" class="bg-gray-800 py-16 px-4">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+    <div class="space-y-6">
+      <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer hover:bg-gray-600" data-answer="answer1">
+        <h3 class="text-xl font-semibold">How much does it cost to get a pilot certificate?</h3>
+        <div class="faq-answer mt-2 text-gray-300 hidden" id="answer1">
+          <p>On average, $14,000. The cost of obtaining a pilot certificate varies depending on several factors, including the type of certificate, how quickly you progress through training, and how frequently you fly. The cost covers aircraft rental, instructor fees, study materials, and examination costs. We can create a customized training plan to fit your budget.</p>
         </div>
-        <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer">
-          <h3 class="text-xl font-semibold">How long does training take?</h3>
-          <div class="faq-answer mt-2 text-gray-300">
-            <p>The time required to earn your pilot certificate depends on your training frequency and how quickly you master the required skills. For a Private Pilot License, the fastest completion is within a month, flying two times a day. Most learners complete their training within 3-6 months when flying 2-3 times per week. We work with your schedule to create a training timeline that matches your availability and goals.</p>
-          </div>
+      </div>
+      <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer hover:bg-gray-600" data-answer="answer2">
+        <h3 class="text-xl font-semibold">How long does training take?</h3>
+        <div class="faq-answer mt-2 text-gray-300 hidden" id="answer2">
+          <p>The time required to earn your pilot certificate depends on your training frequency and how quickly you master the required skills. For a Private Pilot License, the fastest completion is within a month, flying two times a day. Most learners complete their training within 3-6 months when flying 2-3 times per week. We work with your schedule to create a training timeline that matches your availability and goals.</p>
         </div>
-        <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer">
-          <h3 class="text-xl font-semibold">Do you follow an FAA curriculum?</h3>
-          <div class="faq-answer mt-2 text-gray-300">
-            <p>Yes, we use a structured curriculum for all our training programs. Our curriculum is based on the FAA's Airman Certification Standards and is enhanced with the industries proven teaching methodologies. This ensures consistent, comprehensive training that covers all required knowledge and skills. The curriculum includes both ground school and flight training components, with clear milestones to track your progress. You will be notified about the next task in your training.</p>
-          </div>
+      </div>
+      <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer hover:bg-gray-600" data-answer="answer3">
+        <h3 class="text-xl font-semibold">Do you follow an FAA curriculum?</h3>
+        <div class="faq-answer mt-2 text-gray-300 hidden" id="answer3">
+          <p>Yes, we use a structured curriculum for all our training programs. Our curriculum is based on the FAA's Airman Certification Standards and is enhanced with the industry's proven teaching methodologies. This ensures consistent, comprehensive training that covers all required knowledge and skills. The curriculum includes both ground school and flight training components, with clear milestones to track your progress. You will be notified about the next task in your training.</p>
         </div>
-        <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer">
-          <h3 class="text-xl font-semibold">How often should I fly?</h3>
-          <div class="faq-answer mt-2 text-gray-300">
-            <p>For optimal progress, we recommend flying at least 4 times per week. This frequency helps reinforce learning and build muscle memory, reducing the total time and cost of your training. However, we understand that personal and professional commitments may impact your availability. Our instructors will work with you to create a schedule that balances ideal learning conditions with your real-world constraints.</p>
-          </div>
+      </div>
+      <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer hover:bg-gray-600" data-answer="answer4">
+        <h3 class="text-xl font-semibold">How often should I fly?</h3>
+        <div class="faq-answer mt-2 text-gray-300 hidden" id="answer4">
+          <p>For optimal progress, we recommend flying at least 4 times per week. This frequency helps reinforce learning and build muscle memory, reducing the total time and cost of your training. However, we understand that personal and professional commitments may impact your availability. Our instructors will work with you to create a schedule that balances ideal learning conditions with your real-world constraints.</p>
         </div>
-        <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer">
-          <h3 class="text-xl font-semibold">Will I be assigned a flight instructor?</h3>
-          <div class="faq-answer mt-2 text-gray-300">
-            <p>Yes, you will be assigned a primary flight instructor who will be responsible for overseeing your training from start to finish. This ensures consistency in your instruction and allows your instructor to become familiar with your learning style and needs. In the event your primary instructor is unavailable, we have other qualified instructors who can step in to keep your training on schedule. We carefully match students with instructors based on personality, teaching style, and scheduling compatibility.</p>
-          </div>
+      </div>
+      <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer hover:bg-gray-600" data-answer="answer5">
+        <h3 class="text-xl font-semibold">Will I be assigned a flight instructor?</h3>
+        <div class="faq-answer mt-2 text-gray-300 hidden" id="answer5">
+          <p>Yes, you will be assigned a primary flight instructor who will be responsible for overseeing your training from start to finish. This ensures consistency in your instruction and allows your instructor to become familiar with your learning style and needs. In the event your primary instructor is unavailable, we have other qualified instructors who can step in to keep your training on schedule. We carefully match students with instructors based on personality, teaching style, and scheduling compatibility.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      // Get the currently active answer
+      const activeAnswer = document.querySelector('.faq-answer:not(.hidden)');
+
+      // Get the answer associated with the clicked question
+      const answer = question.querySelector('.faq-answer');
+
+      // If the clicked question's answer is already visible, hide it
+      if (answer.classList.contains('hidden')) {
+        // Hide the currently active answer if it exists
+        if (activeAnswer) {
+          activeAnswer.classList.add('hidden');
+        }
+        // Show the clicked question's answer
+        answer.classList.remove('hidden');
+      } else {
+        // If the clicked question's answer is visible, hide it
+        answer.classList.add('hidden');
+      }
+    });
+  });
+</script>
 
   <!-- Contact Section -->
   <div class="bg-gray-700 p-8 rounded">
@@ -182,16 +231,13 @@
       <form id="contact-form" class="space-y-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="block mb-2">Name</label>
             <input type="text" name="name" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Your Name" required>
           </div>
           <div>
-            <label class="block mb-2">Email</label>
             <input type="email" name="email" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Your Email" required>
           </div>
         </div>
         <div>
-          <label class="block mb-2">Message</label>
           <textarea name="message" class="w-full p-2 rounded bg-gray-800 text-white h-32" placeholder="Your Message" required></textarea>
         </div>
         <button type="submit" class="bg-blue-800 text-white py-2 px-6 rounded hover:bg-blue-700 transition">Send Message</button>
