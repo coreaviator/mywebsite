@@ -160,7 +160,7 @@
 
     <div class="mt-8">
         <h3 class="text-xl font-bold mb-4">Send Us a Message</h3>
-        <form action="https://script.google.com/macros/s/AKfycbygS62FgXMks1YpGqHxYwmPDjVTF0uBcdSOtQTWwGGHLrdz6KxIrJu6OmLerJwsjKQSpQ/exec" method="POST" class="space-y-4">
+        <form id="contact-form" class="space-y-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block mb-2">Name</label>
@@ -179,6 +179,28 @@
         </form>
     </div>
 </div>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Show loading spinner here if needed
+    
+    fetch('https://script.google.com/macros/s/AKfycbygS62FgXMks1YpGqHxYwmPDjVTF0uBcdSOtQTWwGGHLrdz6KxIrJu6OmLerJwsjKQSpQ/exec', {
+        method: 'POST',
+        body: new FormData(this),
+        mode: 'no-cors'
+    })
+    .then(() => {
+        // Success - show confirmation message
+        alert('Message sent successfully!');
+        this.reset(); // Clear form
+    })
+    .catch(error => {
+        alert('Error: ' + error.message);
+    });
+});
+</script>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-8">
