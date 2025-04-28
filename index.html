@@ -140,14 +140,45 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-blue-900 text-white py-16 px-4">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
-      <p class="mb-6 text-lg">Call us at <strong>239-350-7124</strong> or email <strong>coreaviatortraining@gmail.com</strong></p>
-      <a href="mailto:coreaviatortraining@gmail.com" class="inline-block bg-white text-blue-900 font-semibold py-3 px-6 rounded hover:bg-gray-200 transition">Send Us an Email</a>
+<!-- Contact Section -->
+<div class="bg-gray-700 p-8 rounded">
+    <h2 class="text-3xl font-bold mb-6">Contact Details</h2>
+    <div class="flex flex-col space-y-4">
+        <div class="flex items-center">
+            <i class="fas fa-map-marker-alt text-xl w-8"></i>
+            <span>Location: Fort Myers, FL | Page Field</span>
+        </div>
+        <div class="flex items-center">
+            <i class="fas fa-phone-alt text-xl w-8"></i>
+            <span>Phone: 239-350-7124</span>
+        </div>
+        <div class="flex items-center">
+            <i class="fas fa-envelope text-xl w-8"></i>
+            <span>Email: coreaviatortraining@gmail.com</span>
+        </div>
     </div>
-  </section>
+
+    <div class="mt-8">
+        <h3 class="text-xl font-bold mb-4">Send Us a Message</h3>
+        <form action="https://script.google.com/macros/s/AKfycbygS62FgXMks1YpGqHxYwmPDjVTF0uBcdSOtQTWwGGHLrdz6KxIrJu6OmLerJwsjKQSpQ/exec" method="POST" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block mb-2">Name</label>
+                    <input type="text" name="name" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Your Name" required>
+                </div>
+                <div>
+                    <label class="block mb-2">Email</label>
+                    <input type="email" name="email" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div>
+                <label class="block mb-2">Message</label>
+                <textarea name="message" class="w-full p-2 rounded bg-gray-800 text-white h-32" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="bg-blue-800 text-white py-2 px-6 rounded hover:bg-blue-700 transition">Send Message</button>
+        </form>
+    </div>
+</div>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-8">
