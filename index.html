@@ -10,9 +10,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
   <style>
     body {
-      background-color: #f9f9f9;
-      color: #1a1a1a;
+      background-color: #8a8a8a;
+      color: #e0e0e0;
       font-family: 'Inter', sans-serif;
+    }
+    .bg-navy-banner {
+      background-color: #001f3f;
     }
     .hero-bg {
       background-image: url('images/1.png');
@@ -36,6 +39,9 @@
     .tab-content.active {
       display: block;
     }
+    .faq-question {
+      background-color: #gray-700;
+    }
     .faq-question.active .faq-answer {
       max-height: 500px;
     }
@@ -43,35 +49,36 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-out;
+      color: #gray-300;
     }
   </style>
 </head>
 <body>
   <!-- Header -->
-  <header class="bg-white shadow sticky top-0 z-50">
+  <header class="bg-navy-banner shadow sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <img src="images/logo.png" alt="Logo" class="w-16 h-16">
       <nav class="space-x-6 font-medium">
-        <a href="#" class="hover:text-blue-700">Home</a>
-        <a href="#about" class="hover:text-blue-700">About</a>
-        <a href="#training" class="hover:text-blue-700">Training</a>
-        <a href="#faq" class="hover:text-blue-700">FAQ</a>
-        <a href="#contact" class="hover:text-blue-700">Contact</a>
+        <a href="#" class="hover:text-gray-300">Home</a>
+        <a href="#about" class="hover:text-gray-300">About</a>
+        <a href="#training" class="hover:text-gray-300">Training</a>
+        <a href="#faq" class="hover:text-gray-300">FAQ</a>
+        <a href="#contact" class="hover:text-gray-300">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero-bg h-[100vh] flex items-center justify-center text-white text-center">
-  <div class="pt-24 px-6 md:px-12 lg:px-24 py-12 md:py-20">
+    <div class="pt-24 px-6 md:px-12 lg:px-24 py-12 md:py-20">
       <h1 class="text-6xl font-extrabold shadow-text">Core Aviator Training</h1>
       <p class="mt-4 text-2xl font-light italic">Safety. Proficiency. Professionalism.</p>
       <a href="#contact" class="mt-6 inline-block bg-blue-700 hover:bg-blue-800 text-white py-3 px-6 rounded text-lg transition">Start Your Flight</a>
-    <div class="px-6 md:px-12 lg:px-24 py-12 md:py-20">
+    </div>
   </section>
 
   <!-- Training Tabs Section -->
-  <section id="training" class="bg-gray-100 py-16 px-4">
+  <section id="training" class="bg-gray-700 py-16 px-4">
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold mb-10 text-center">Training Programs</h2>
       <div class="flex flex-wrap justify-center mb-6 border-b border-gray-300">
@@ -80,19 +87,19 @@
         <div class="tab px-6 py-3 text-lg" data-tab="advanced-ratings">Advanced Ratings</div>
         <div class="tab px-6 py-3 text-lg" data-tab="rusty-pilot">Rusty Pilot</div>
       </div>
-      <div id="learn-to-fly" class="tab-content active p-6 bg-white rounded shadow-md">
+      <div id="learn-to-fly" class="tab-content active p-6 bg-gray-700 rounded shadow-md">
         <h3 class="text-2xl font-semibold mb-4">Learn to Fly Program</h3>
         <p>Experience the thrill of your first flight. Our beginner program includes an introductory flight lesson, ground school basics, simulator time, and essential course materials.</p>
       </div>
-      <div id="private-pilot" class="tab-content p-6 bg-white rounded shadow-md">
+      <div id="private-pilot" class="tab-content p-6 bg-gray-700 rounded shadow-md">
         <h3 class="text-2xl font-semibold mb-4">Private Pilot License</h3>
         <p>Become a certified pilot with a structured curriculum covering flight hours, exams, and practical training. We prepare you every step of the way.</p>
       </div>
-      <div id="advanced-ratings" class="tab-content p-6 bg-white rounded shadow-md">
+      <div id="advanced-ratings" class="tab-content p-6 bg-gray-700 rounded shadow-md">
         <h3 class="text-2xl font-semibold mb-4">Advanced Ratings</h3>
         <p>Pursue advanced certifications like Instrument or Commercial Pilot Licenses. Ideal for those serious about aviation careers.</p>
       </div>
-      <div id="rusty-pilot" class="tab-content p-6 bg-white rounded shadow-md">
+      <div id="rusty-pilot" class="tab-content p-6 bg-gray-700 rounded shadow-md">
         <h3 class="text-2xl font-semibold mb-4">Rusty Pilot Program</h3>
         <p>Ready to fly again? Brush up on regulations, procedures, and hands-on flying with our experienced instructors.</p>
       </div>
@@ -100,7 +107,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="bg-white py-16 px-4">
+  <section id="about" class="bg-gray-700 py-16 px-4">
     <div class="container mx-auto flex flex-col md:flex-row items-center">
       <div class="md:w-2/3 mb-6 md:mb-0 md:pr-12">
         <h2 class="text-4xl font-bold mb-4">About Core Aviator Training</h2>
@@ -118,96 +125,86 @@
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
       <div class="space-y-6">
-        <div class="faq-question bg-white p-6 rounded shadow cursor-pointer">
+        <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer">
           <h3 class="text-xl font-semibold">How much does it cost to get a pilot certificate?</h3>
-          <div class="faq-answer mt-2 text-gray-600">
-            <p>On average, around $14,000. Costs vary depending on frequency and type of training.</p>
+          <div class="faq-answer mt-2 text-gray-300">
+            <p>On average, $14,000. The cost of obtaining a pilot certificate varies depending on several factors, including the type of certificate, how quickly you progress through training, and how frequently you fly. The cost covers aircraft rental, instructor fees, study materials, and examination costs. We can create a customized training plan to fit your budget.</p>
           </div>
         </div>
-        <div class="faq-question bg-white p-6 rounded shadow cursor-pointer">
+        <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer">
           <h3 class="text-xl font-semibold">How long does training take?</h3>
-          <div class="faq-answer mt-2 text-gray-600">
-            <p>Private pilot training can take 1–6 months depending on your availability and progress speed.</p>
+          <div class="faq-answer mt-2 text-gray-300">
+            <p>The time required to earn your pilot certificate depends on your training frequency and how quickly you master the required skills. For a Private Pilot License, the fastest completion is within a month, flying two times a day. Most learners complete their training within 3-6 months when flying 2-3 times per week. We work with your schedule to create a training timeline that matches your availability and goals.</p>
           </div>
         </div>
-        <div class="faq-question bg-white p-6 rounded shadow cursor-pointer">
+        <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer">
           <h3 class="text-xl font-semibold">Do you follow an FAA curriculum?</h3>
-          <div class="faq-answer mt-2 text-gray-600">
-            <p>Yes. We use FAA-approved curriculum backed by modern instructional methods for consistency and quality.</p>
+          <div class="faq-answer mt-2 text-gray-300">
+            <p>Yes, we use a structured curriculum for all our training programs. Our curriculum is based on the FAA's Airman Certification Standards and is enhanced with the industries proven teaching methodologies. This ensures consistent, comprehensive training that covers all required knowledge and skills. The curriculum includes both ground school and flight training components, with clear milestones to track your progress. You will be notified about the next task in your training.</p>
+          </div>
+        </div>
+        <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer">
+          <h3 class="text-xl font-semibold">How often should I fly?</h3>
+          <div class="faq-answer mt-2 text-gray-300">
+            <p>For optimal progress, we recommend flying at least 4 times per week. This frequency helps reinforce learning and build muscle memory, reducing the total time and cost of your training. However, we understand that personal and professional commitments may impact your availability. Our instructors will work with you to create a schedule that balances ideal learning conditions with your real-world constraints.</p>
+          </div>
+        </div>
+        <div class="faq-question bg-gray-700 p-6 rounded shadow cursor-pointer">
+          <h3 class="text-xl font-semibold">Will I be assigned a flight instructor?</h3>
+          <div class="faq-answer mt-2 text-gray-300">
+            <p>Yes, you will be assigned a primary flight instructor who will be responsible for overseeing your training from start to finish. This ensures consistency in your instruction and allows your instructor to become familiar with your learning style and needs. In the event your primary instructor is unavailable, we have other qualified instructors who can step in to keep your training on schedule. We carefully match students with instructors based on personality, teaching style, and scheduling compatibility.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-<!-- Contact Section -->
-<div class="bg-gray-700 p-8 rounded">
+  <!-- Contact Section -->
+  <div class="bg-gray-700 p-8 rounded">
     <h2 class="text-3xl font-bold mb-6">Contact Details</h2>
     <div class="flex flex-col space-y-4">
-        <div class="flex items-center">
-            <i class="fas fa-map-marker-alt text-xl w-8"></i>
-            <span>Location: Fort Myers, FL | Page Field</span>
-        </div>
-        <div class="flex items-center">
-            <i class="fas fa-phone-alt text-xl w-8"></i>
-            <span>Phone: 239-350-7124</span>
-        </div>
-        <div class="flex items-center">
-            <i class="fas fa-envelope text-xl w-8"></i>
-            <span>Email: coreaviatortraining@gmail.com</span>
-        </div>
+      <div class="flex items-center">
+        <i class="fas fa-map-marker-alt text-xl w-8"></i>
+        <span>Location: Fort Myers, FL | Page Field</span>
+      </div>
+      <div class="flex items-center">
+        <i class="fas fa-phone-alt text-xl w-8"></i>
+        <span>Phone: 239-350-7124</span>
+      </div>
+      <div class="flex items-center">
+        <i class="fas fa-envelope text-xl w-8"></i>
+        <span>Email: coreaviatortraining@gmail.com</span>
+      </div>
     </div>
 
     <div class="mt-8">
-        <h3 class="text-xl font-bold mb-4">Send Us a Message</h3>
-        <form id="contact-form" class="space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <label class="block mb-2">Name</label>
-                    <input type="text" name="name" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Your Name" required>
-                </div>
-                <div>
-                    <label class="block mb-2">Email</label>
-                    <input type="email" name="email" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Your Email" required>
-                </div>
-            </div>
-            <div>
-                <label class="block mb-2">Message</label>
-                <textarea name="message" class="w-full p-2 rounded bg-gray-800 text-white h-32" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="bg-blue-800 text-white py-2 px-6 rounded hover:bg-blue-700 transition">Send Message</button>
-        </form>
+      <h3 class="text-xl font-bold mb-4">Send Us a Message</h3>
+      <form id="contact-form" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-2">Name</label>
+            <input type="text" name="name" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Your Name" required>
+          </div>
+          <div>
+            <label class="block mb-2">Email</label>
+            <input type="email" name="email" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Your Email" required>
+          </div>
+        </div>
+        <div>
+          <label class="block mb-2">Message</label>
+          <textarea name="message" class="w-full p-2 rounded bg-gray-800 text-white h-32" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="bg-blue-800 text-white py-2 px-6 rounded hover:bg-blue-700 transition">Send Message</button>
+      </form>
     </div>
-</div>
-
-<script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Show loading spinner here if needed
-    
-    fetch('https://script.google.com/macros/s/AKfycbygS62FgXMks1YpGqHxYwmPDjVTF0uBcdSOtQTWwGGHLrdz6KxIrJu6OmLerJwsjKQSpQ/exec', {
-        method: 'POST',
-        body: new FormData(this),
-        mode: 'no-cors'
-    })
-    .then(() => {
-        // Success - show confirmation message
-        alert('Message sent successfully!');
-        this.reset(); // Clear form
-    })
-    .catch(error => {
-        alert('Error: ' + error.message);
-    });
-});
-</script>
+  </div>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-8">
+  <footer class="bg-navy-banner text-white py-8">
     <div class="container mx-auto text-center">
-      <p class="text-lg font-semibold">&copy; 2025 Core Aviator Training. All rights reserved.</p>
+      <p class="text-lg font-semibold">© 2025 Core Aviator Training. All rights reserved.</p>
       <div class="mt-4">
-        <a href="https://instagram.com/coreaviatortraining" target="_blank" class="text-white hover:text-gray-400">
+        <a href="https://instagram.com/coreaviatortraining" target="_blank" class="text-white hover:text-gray-300">
           <i class="fab fa-instagram text-2xl"></i>
         </a>
       </div>
@@ -227,6 +224,22 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => q.classList.toggle('active'));
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      fetch('https://script.google.com/macros/s/AKfycbygS62FgXMks1YpGqHxYwmPDjVTF0uBcdSOtQTWwGGHLrdz6KxIrJu6OmLerJwsjKQSpQ/exec', {
+        method: 'POST',
+        body: new FormData(this),
+        mode: 'no-cors'
+      })
+      .then(() => {
+        alert('Message sent successfully!');
+        this.reset();
+      })
+      .catch(error => {
+        alert('Error: ' + error.message);
+      });
     });
   </script>
 </body>
