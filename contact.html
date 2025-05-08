@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Contact Core Aviator Training: Fort Myers Flight School</title>
+    <meta name="description" content="Contact Core Aviator Training in Fort Myers, FL. Get in touch with us for flight training inquiries, scheduling, or general information. We're here to help you achieve your aviation goals.">
+    
+    <!-- Tailwind CSS via jsdelivr -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome via jsdelivr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Public+Sans:600,700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+    
+    <style>
+        :root {
+            --primary-color: #1194d1;
+            --secondary-color: #0e7eb2;
+            --accent-color: #ff3067;
+            --dark-blue: #1152dd;
+            --text-color: #333;
+            --light-text: #ffffff;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        #header-outer {
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+            padding: 15px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        #header-outer.scrolled {
+            background-color: white;
+            position: fixed;
+            top: 0;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+        
+        /* Navigation */
+        .main-menu ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-menu ul li {
+            margin-left: 25px;
+        }
+        
+        .main-menu ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .header-scrolled .main-menu ul li a {
+            color: var(--text-color);
+        }
+        
+        .main-menu ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            height: 60vh;
+            background-color: #000;
+            position: relative;
+            color: white;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/standtall.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content .subheader {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--accent-color);
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-info-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+.map-section {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 600px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 992px) {
+    #map {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    #map {
+        height: 300px;
+    }
+}
+        
+        .map-info {
+            width: 50%;
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 70px 0 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-col {
+            width: 45%;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h4 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-menu li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-menu li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-menu li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        
+        /* Contact Form Styles */
+        .radio-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .radio-option {
+            flex: 1 0 calc(50% - 10px);
+            margin-bottom: 10px;
+        }
+        
+        .radio-option input {
+            margin-right: 5px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .map-section {
+                flex-direction: column;
+            }
+            
+            .map-info, #map {
+                width: 100%;
+            }
+            
+            #map {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-col {
+                width: 100%;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .main-menu {
+                display: none;
+            }
+            
+            .radio-option {
+                flex: 1 0 100%;
+            }
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header id="header-outer">
+        <div class="container">
+            <div class="flex items-center justify-between py-4">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Core Aviator Training">
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Our Location</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+<section class="hero-section">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Contact Core Aviator Training</h1>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section h1 {
+    font-size: 1.875rem; /* ~30px, matches text-3xl */
+    margin-left: 24px; /* Matches ml-6 */
+  }
+</style>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="flex flex-wrap -mx-4">
+      <!-- Contact Form -->
+      <div class="w-full md:w-8/12 px-4 mb-8">
+        <h2 class="text-3xl mb-6">Contact Us to Schedule a Flight</h2>
+        <form id="contact-form" method="POST">
+          <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <div class="form-group">
+                <label for="first-name">First Name <span class="text-red-500">*</span></label>
+                <input type="text" id="first-name" name="first-name" class="form-control" required>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <div class="form-group">
+                <label for="last-name">Last Name <span class="text-red-500">*</span></label>
+                <input type="text" id="last-name" name="last-name" class="form-control" required>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <div class="form-group">
+                <label for="email">Email Address <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(XXX) XXX-XXXX">
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group mb-4">
+            <label>Interested In</label>
+            <div class="radio-options">
+              <div class="radio-option">
+                <input type="radio" id="discovery" name="service" value="Discovery Flight">
+                <label for="discovery">Discovery Flight</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="private" name="service" value="Private Pilot License (PPL)">
+                <label for="private">Private Pilot License (PPL)</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="instrument" name="service" value="Instrument Rating">
+                <label for="instrument">Instrument Rating</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="commercial" name="service" value="Commercial Pilot License (CPL)">
+                <label for="commercial">Commercial Pilot License (CPL)</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="review" name="service" value="Flight Reviews">
+                <label for="review">Flight Reviews</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group mb-4">
+            <label for="message">Additional Comments</label>
+            <textarea id="message" name="message" rows="5" class="form-control"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      
+      <!-- Contact Info Card -->
+      <div class="w-full md:w-4/12 px-4">
+        <div class="contact-info-card">
+          <h4 class="text-xl mb-4 text-primary-color">Core Aviator Training</h4>
+          <p class="mb-3">
+            <a href="tel:+12393507124" class="text-gray-700">(239) 350-7124</a><br>
+            <a href="mailto:coreaviatortraining@gmail.com" class="text-gray-700">coreaviatortraining@gmail.com</a>
+          </p>
+          <p class="mb-6">
+            Page Field Airport<br>
+            Fort Myers, FL 33907
+          </p>
+          
+          <div class="border-t border-gray-200 pt-4 mt-4">
+            <h5 class="font-bold mb-2">Business Hours</h5>
+            <p class="mb-1">Monday - Saturday: 7AM - 6PM</p>
+            <p>Sunday: By Appointment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Create FormData and combine first-name and last-name into name
+      const formData = new FormData(this);
+      const firstName = formData.get('first-name') || '';
+      const lastName = formData.get('last-name') || '';
+      formData.set('name', `${firstName} ${lastName}`.trim());
+      formData.delete('first-name');
+      formData.delete('last-name');
+
+      // Debug: Log form data to console
+      const formDataObj = {};
+      for (const [key, value] of formData.entries()) {
+        formDataObj[key] = value;
+      }
+      console.log('Form Data:', formDataObj);
+
+      // Submit to Google Apps Script
+      fetch('https://script.google.com/macros/s/AKfycbygS62FgXMks1YpGqHxYwmPDjVTF0uBcdSOtQTWwGGHLrdz6KxIrJu6OmLerJwsjKQSpQ/exec', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+        .then(() => {
+          alert('Message sent successfully!');
+          this.reset();
+        })
+        .catch(error => {
+          alert('Error: ' + error.message);
+        });
+    });
+  </script>
+</section>
+
+<section class="map-section">
+    <div id="map"></div>
+</section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <img src="images/logo.png" alt="Core Aviator Training" style="width: 250px; margin-bottom: 20px;">
+                    <p>
+                        Core Aviator Training is dedicated to cultivating the next generation of aviators. We provide exceptional flight training at Page Field Airport, empowering individuals to achieve their aviation aspirations. From the thrill of a discovery flight to the expertise of a commercial pilot, our commitment to excellence ensures a solid foundation for a lifetime of flying.
+                    </p>
+                </div>
+                
+<div class="footer-col">
+  <h4>Quick Links</h4>
+  <ul class="footer-menu flex space-x-4">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Our Location</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="mt-8">
+    <p>
+      Page Field Airport<br>
+      Fort Myers, FL 33907<br>
+      <a href="mailto:coreaviatortraining@gmail.com">coreaviatortraining@gmail.com</a><br>
+      <a href="tel:+12393507124">(239) 350-7124</a>
+    </p>
+  </div>
+</div>
+            
+            <div class="copyright">
+                <div class="container">
+                    <p>© 2025 Core Aviator Training.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+    
+    <script>
+        // Header scroll behavior
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header-outer');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.main-menu').classList.toggle('active');
+        });
+        
+// Initialize map
+document.addEventListener('DOMContentLoaded', function() {
+    // Page Field Airport coordinates (Fort Myers, FL)
+    var map = L.map('map', {
+        scrollWheelZoom: false // Disable scroll wheel zooming
+    }).setView([26.5867, -81.8631], 13);
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+    
+    // Add marker for Page Field Airport (KFMY)
+    var marker = L.marker([26.5867, -81.8631]).addTo(map);
+    marker.bindPopup("<b>Core Aviator Training</b><br>Page Field Airport").openPopup();
+    
+    setTimeout(() => map.invalidateSize(), 100); // Force redraw for full-width map
+});
+        
+        // Form validation
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Simple validation example
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            
+            if (!firstName || !lastName || !email) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // In a real implementation, you would send the form data to a server
+            <!-- alert('Thank you for your message. We will get back to you shortly!');
+            <!-- this.reset(); -->
+        });
+    </script>
+</body>
+</html>
