@@ -382,14 +382,19 @@
 }
 
 #menuBtn {
-    z-index: 10000 !important; /* Higher than other elements */
+    z-index: 10000 !important; /* Keep high z-index */
+    display: block; /* Ensure visibility */
 }
 
 #sidePanel {
-    z-index: 10001 !important; /* Higher than menuBtn and other elements */
+    z-index: 10001 !important; /* Above other elements */
+    width: 250px; /* Consistent width for desktop */
+    background-color: #000; /* Match existing style */
+    color: white;
+    transition: transform 0.3s ease-in-out;
 }
 #closeBtn {
-    z-index: 10002 !important; /* Ensure close button is above sidePanel */
+    z-index: 10002 !important; /* Above side panel */
 }
 
 /* Responsive Adjustments */
@@ -398,9 +403,19 @@
         display: block;
     }
 
+@media (min-width: 769px) {
     .main-menu {
-        display: none;
+        display: flex !important; /* Ensure desktop menu is visible */
     }
+    #menuBtn {
+        display: block !important; /* Keep hamburger button visible */
+        position: relative; /* Ensure it integrates with header layout */
+    }
+    #sidePanel {
+        display: block; /* Ensure side panel is available when toggled */
+        width: 250px; /* Adjust width for desktop if needed */
+    }
+}
 
 
 }
@@ -446,22 +461,30 @@
     </style>
 </head>
 <body>
-    <header id="header-outer">
-        <div class="container">
-            <div class="flex items-center justify-between py-4">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="images/logo.png" alt="Core Aviator Training">
-                    </a>
-                </div>
-                
-
-        </ul>
-    </div>
-</nav>
+<header id="header-outer">
+    <div class="container">
+        <div class="flex items-center justify-between py-4">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Core Aviator Training">
+                </a>
+            </div>
+            <div class="flex items-center">
+                <nav class="main-menu">
+                    <div>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <button id="menuBtn" class="p-2 bg-black text-white rounded-md focus:outline-none ml-4">
+                    ☰
+                </button>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
 <section class="hero-section">
     <div class="hero-bg"></div>
@@ -478,11 +501,6 @@
         </a>
     </div>
 </section>
-
-<!-- Hamburger Button -->
-<button id="menuBtn" class="fixed top-4 right-4 z-[9999] p-2 bg-black text-white rounded-md focus:outline-none">
-  ☰
-</button>
 
 <!-- Slide-In Full Height Side Panel -->
 <div id="sidePanel" class="fixed top-0 right-0 h-full w-48 bg-black text-white shadow-lg transform translate-x-full transition-transform duration-300 z-40 p-4">
@@ -721,11 +739,8 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Our Location</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                     <div class="mt-8">
                         <p>
