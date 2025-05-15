@@ -67,11 +67,24 @@
     background-color: white;
     box-shadow: 0 1px 10px rgba(0,0,0,0.1);
 }
+
+#header-outer {
+    min-height: 0;
+}
+.container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
         
-        .logo img {
-            height: 70px;
-            width: auto;
-        }
+.logo img {
+    height: 70px; /* Default for mobile */
+    width: auto;
+}
+@media (min-width: 769px) {
+    .logo img {
+        height: 85px; /* Slightly larger for desktop */
+    }
+}
         
         /* Navigation */
         .main-menu ul {
@@ -91,6 +104,11 @@
             font-weight: 600;
             transition: color 0.3s ease;
         }
+		@media (max-width: 768px) {
+    .main-menu ul li a[href="index.html"] {
+        display: none !important; /* Specifically hide Home link in main-menu on mobile */
+    }
+}
         
         .header-scrolled .main-menu ul li a {
             color: var(--text-color);
@@ -388,16 +406,22 @@
     z-index: 10000 !important; /* Keep high z-index */
     display: block; /* Ensure visibility */
 }
+	@media (max-width: 768px) {
+    #header-outer {
+        position: absolute; /* Restore default behavior for mobile */
+    }
+}
 
 #sidePanel {
     z-index: 10001 !important; /* Above other elements */
-    width: 250px; /* Consistent width for desktop */
+    width: 192px; /* Consistent width for desktop */
     background-color: #000; /* Match existing style */
     color: white;
     transition: transform 0.3s ease-in-out;
 }
 #closeBtn {
     z-index: 10002 !important; /* Above side panel */
+	pointer-events: auto !important; /* Ensure clickable */
 }
 
 /* Responsive Adjustments */
@@ -460,19 +484,32 @@
             text-align: center;
             line-height: 40px;
         }
-        
+@media (min-width: 769px) {
+    #sidePanel:not(.translate-x-full) ~ #header-outer .main-menu {
+        transform: translateX(-192px); /* Match sidePanel width */
+        transition: transform 0.3s ease-in-out; /* Match sidePanel transition */
+    }
+}
+@media (min-width: 769px) {
+    .main-menu {
+        position: relative;
+        transform: none !important; /* Prevent any transforms */
+        left: 0 !important; /* Lock to header’s layout */
+        z-index: 1000; /* Match header-outer */
+    }
+}
     </style>
 </head>
 <body>
 <header id="header-outer">
     <div class="container">
-        <div class="flex items-center justify-between py-4">
+        <div class="flex items-center justify-between py-2">
             <div class="logo">
                 <a href="index.html">
                     <img src="images/logo.png" alt="Core Aviator Training">
                 </a>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center justify-end"> <!-- Changed from justify-between -->
                 <nav class="main-menu">
                     <div>
                         <ul>
@@ -481,9 +518,7 @@
                         </ul>
                     </div>
                 </nav>
-                <button id="menuBtn" class="p-2 bg-black text-white rounded-md focus:outline-none ml-4">
-                    ☰
-                </button>
+                <button id="menuBtn" class="p-2 bg-black text-white rounded-md focus:outline-none ml-4">☰</button>
             </div>
         </div>
     </div>
