@@ -558,22 +558,43 @@
 
 <!-- JavaScript -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuBtn = document.getElementById("menuBtn");
-    const sidePanel = document.getElementById("sidePanel");
-    const closeBtn = document.getElementById("closeBtn");
+  document.addEventListener('DOMContentLoaded', function () {
+    const header = document.getElementById('header-outer');
+    const menuBtn = document.getElementById('menuBtn');
+    const sidePanel = document.getElementById('sidePanel');
+    const closeBtn = document.getElementById('closeBtn');
 
-    menuBtn.addEventListener("click", () => {
-      sidePanel.classList.remove("translate-x-full");
-      menuBtn.classList.add("hidden");
+    // Header scroll effect
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     });
 
-    closeBtn.addEventListener("click", () => {
-      sidePanel.classList.add("translate-x-full");
-      menuBtn.classList.remove("hidden");
+    // Open mobile side panel
+    menuBtn.addEventListener('click', () => {
+      sidePanel.classList.remove('translate-x-full');
+      menuBtn.classList.add('hidden');
     });
+
+    // Close side panel
+    closeBtn.addEventListener('click', () => {
+      sidePanel.classList.add('translate-x-full');
+      menuBtn.classList.remove('hidden');
+    });
+
+    // Leaflet map
+    var map = L.map('map').setView([26.5867, -81.8631], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+    var marker = L.marker([26.5867, -81.8631]).addTo(map);
+    marker.bindPopup("<b>Core Aviator Training</b><br>Page Field Airport").openPopup();
   });
 </script>
+
 
 
     <section id="discover" class="features-section">
