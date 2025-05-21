@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Pilot Course - Core Aviator Training LLC</title>
+    <title>Private Pilot Course - Core Aviator Training</title>
     <meta name="description" content="Discover personalized pilot training with flexible schedules, one-on-one instruction, and FAA-approved courses to prepare you for your Private Pilot License.">
     <meta property="og:title" content="Private Pilot Course">
     <meta property="og:description" content="Discover personalized pilot training with flexible schedules, one-on-one instruction, and FAA-approved courses to prepare you for your Private Pilot License.">
@@ -51,15 +51,16 @@
         .dropdown:hover .dropdown-menu {
             display: block;
         }
-        .bg-hero {
-            background-image: url('https://49130290.fs1.hubspotusercontent-na1.net/hub/49130290/hubfs/SR/images/PRIVATE-PILOTs.png?width=1440&name=PRIVATE-PILOTs.png');
-            background-size: cover;
-            background-position: center center;
-        }
-        @media (min-width: 768px) {
-            .bg-hero {
-                background-image: url('https://49130290.fs1.hubspotusercontent-na1.net/hub/49130290/hubfs/SR/images/PRIVATE-PILOTs.png?width=2880&name=PRIVATE-PILOTs.png');
-            }
+		.bg-hero {
+			background-image: url('images/inflight.png');
+			background-size: cover;
+			background-position: center center;
+		}
+		@media (min-width: 768px) {
+		.bg-hero {
+			background-image: url('images/inflight.png');
+		}
+	}
         }
         .bg-hero::before {
             content: "";
@@ -78,7 +79,7 @@
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div>
                 <a href="https://coreaviatortraining.com">
-                    <img src="images/logo.png" alt="Core Aviator Training LLC" class="h-11">
+                    <img src="images/logo.png" alt="Core Aviator Training" class="h-11">
                 </a>
             </div>
            <nav class="hidden md:flex space-x-6">
@@ -163,20 +164,38 @@
         </div>
     </section>
 
-    <!-- Why Become a Pilot Section -->
-    <section class="py-12 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">WHY BECOME A PILOT?</h2>
-            <div class="flex flex-col md:flex-row items-center">
-				<div class="md:w-1/2">
-					<img src="images/taxi.jpg" alt="Course Info" loading="lazy" width="2000" style="max-width: 100%; height: auto;" srcset="images/taxi.jpg?width=1000 1000w, images/taxi.jpg?width=2000 2000w, images/taxi.jpg?width=3000 3000w, images/taxi.jpg?width=4000 4000w, images/taxi.jpg?width=5000 5000w, images/taxi.jpg?width=6000 6000w" sizes="(max-width: 2000px) 100vw, 2000px" class="w-full h-auto">
-				</div>
-                <div class="md:w-1/2 text-center">
-                    <p>Becoming a pilot offers a unique combination of adventure, freedom, and professional opportunities. At Core Aviator Training, earning your <em>Private Pilot License (PPL)</em> is the first step towards a life in the skies, providing the ability to fly for personal, recreational, or business purposes. With a <em>PPL</em>, you gain the freedom to travel at your own pace, avoiding the limitations of commercial flights. The Private Pilot License also opens doors to further certifications, allowing you to build a career in aviation. Additionally, pilots often experience a sense of accomplishment, enhanced decision-making skills, and access to breathtaking views while flying. With competitive salaries in commercial aviation, starting your journey at <strong><em>Core Aviator Training LLC</em></strong> equips you with the foundational skills needed for a successful aviation career, all while enjoying the excitement of taking control of an aircraft.</p>
-                </div>
+<!-- Why Become a Pilot Section -->
+<section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">WHY BECOME A PILOT?</h2>
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <img src="images/sunset.png" alt="Private Pilot" loading="lazy" width="2000" style="max-width: 100%; height: auto;" srcset="images/sunset.png?width=1000 1000w, images/sunset.png?width=2000 2000w, images/sunset.png?width=3000 3000w, images/sunset.png?width=4000 4000w, images/sunset.png?width=5000 5000w, images/sunset.png?width=6000 6000w" sizes="(max-width: 2000px) 100vw, 2000px" class="w-full h-auto">
+            </div>
+            <div class="md:w-1/2 text-center px-4 md:px-8">
+                <p class="text-gray-800">Becoming a pilot offers a unique combination of adventure, freedom, and professional opportunities. At Core Aviator Training, earning your <em>Private Pilot License (PPL)</em> is the first step towards a life in the skies, providing the ability to fly for personal, recreational, or business purposes. With a <em>PPL</em>, you gain the freedom to travel at your own pace, avoiding the limitations of commercial flights. The Private Pilot License also opens doors to further certifications, allowing you to build a career in aviation. Additionally, pilots often experience a sense of accomplishment, enhanced decision-making skills, and access to breathtaking views while flying. With competitive salaries in commercial aviation, starting your journey at <strong><em>Core Aviator Training</em></strong> equips you with the foundational skills needed for a successful aviation career, all while enjoying the excitement of taking control of an aircraft.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    /* Ensure the image container has no padding or margin to go edge-to-edge */
+    .bg-gray-100 .md\:w-1\/2 img {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Adjust container padding for larger screens to prevent image clipping */
+    @media (min-width: 768px) {
+        .bg-gray-100 .container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+</style>
 
     <!-- Training Timeline Section -->
     <section class="py-12 bg-white">
@@ -323,8 +342,8 @@
                     <p class="ml-4">No! Training is conducted one-on-one with a certified instructor. This allows you to go at your own pace without ever needing to ask questions in front of a large class.</p>
                 </div>
                 <div>
-                    <h5 class="text-lg font-semibold">What certifications does Core Aviator Training LLC hold?</h5>
-                    <p class="ml-4">Core Aviator Training LLC is Part 61.</p>
+                    <h5 class="text-lg font-semibold">What certifications does Core Aviator Training hold?</h5>
+                    <p class="ml-4">Core Aviator Training is Part 61.</p>
                 </div>
                 <div>
                     <h5 class="text-lg font-semibold">Do I get a certificate after completing 40 hrs of training?</h5>
@@ -351,7 +370,7 @@
         <div class="container mx-auto px-4">
             <div class="mb-6">
                 <a href="https://coreaviatortraining.com">
-                    <img src="images/logo.png" alt="Core Aviator Training LLC" class="mx-auto h-20">
+                    <img src="images/logo.png" alt="Core Aviator Training" class="mx-auto h-20">
                 </a>
                 <p class="text-gray-800 mt-3">Safety, Proficiency, Professionalism.</p>
             </div>
