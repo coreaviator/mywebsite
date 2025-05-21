@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Pilot Course - Core Aviator Training LLC</title>
+    <meta name="description" content="Discover personalized pilot training with flexible schedules, one-on-one instruction, and FAA-approved courses to prepare you for your Private Pilot License.">
+    <meta property="og:title" content="Private Pilot Course">
+    <meta property="og:description" content="Discover personalized pilot training with flexible schedules, one-on-one instruction, and FAA-approved courses to prepare you for your Private Pilot License.">
+    <meta property="og:url" content="https://coreaviatortraining.com/private-pilot">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Private Pilot Course">
+    <meta name="twitter:description" content="Discover personalized pilot training with flexible schedules, one-on-one instruction, and FAA-approved courses to prepare you for your Private Pilot License.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "Poppins";
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+            src: url("/_hcms/googlefonts/Poppins/300.woff2") format("woff2"), url("/_hcms/googlefonts/Poppins/300.woff") format("woff");
+        }
+        @font-face {
+            font-family: "Poppins";
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            src: url("/_hcms/googlefonts/Poppins/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Poppins/regular.woff") format("woff");
+        }
+        @font-face {
+            font-family: "Poppins";
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+            src: url("/_hcms/googlefonts/Poppins/500.woff2") format("woff2"), url("/_hcms/googlefonts/Poppins/500.woff") format("woff");
+        }
+        @font-face {
+            font-family: "Poppins";
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+            src: url("/_hcms/googlefonts/Poppins/600.woff2") format("woff2"), url("/_hcms/googlefonts/Poppins/600.woff") format("woff");
+        }
+        @font-face {
+            font-family: "Poppins";
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+            src: url("/_hcms/googlefonts/Poppins/700.woff2") format("woff2"), url("/_hcms/googlefonts/Poppins/700.woff") format("woff");
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .bg-hero {
+            background-image: url('https://49130290.fs1.hubspotusercontent-na1.net/hub/49130290/hubfs/SR/images/PRIVATE-PILOTs.png?width=1440&name=PRIVATE-PILOTs.png');
+            background-size: cover;
+            background-position: center center;
+        }
+        @media (min-width: 768px) {
+            .bg-hero {
+                background-image: url('https://49130290.fs1.hubspotusercontent-na1.net/hub/49130290/hubfs/SR/images/PRIVATE-PILOTs.png?width=2880&name=PRIVATE-PILOTs.png');
+            }
+        }
+        .bg-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body class="font-poppins bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div>
+                <a href="https://coreaviatortraining.com">
+                    <img src="logo.png" alt="Core Aviator Training LLC" class="h-11">
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="https://coreaviatortraining.com" class="text-black font-bold text-sm hover:text-gray-700">HOME</a>
+                <div class="relative dropdown">
+                    <button class="text-black font-bold text-sm hover:text-gray-700 flex items-center">
+                        TRAINING
+                        <svg class="ml-1 w-3 h-3" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.82082 0L5 3.82082L1.17918 0L0 1.17914L5 6.17914L10 1.17914L8.82082 0Z" fill="currentColor"></path>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu hidden absolute bg-white shadow-md mt-2 w-48">
+                        <a href="discover.html" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">DISCOVERY FLIGHT</a>
+                        <a href="ppl.html" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">PRIVATE PILOT</a>
+                        <a href="instrument.html" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">INSTRUMENT</a>
+                        <a href="financing.html" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">FINANCING</a>
+                    </div>
+                </div>
+                <a href="tel:2393507124" class="text-black font-bold text-sm hover:text-gray-700">239.350.7124</a>
+                <a href="https://coreaviatortraining.com/contact.html" class="text-black font-bold text-sm hover:text-gray-700">CONTACT</a>
+            </nav>
+            <button class="md:hidden text-black" id="mobile-menu-toggle">
+                <svg class="w-6 h-6" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="14" width="26" height="2" fill="#30343B"></rect>
+                    <rect y="7" width="26" height="2" fill="#30343B"></rect>
+                    <rect width="26" height="2" fill="#30343B"></rect>
+                </svg>
+            </button>
+        </div>
+        <nav class="hidden md:hidden bg-white shadow-md" id="mobile-menu">
+            <ul class="list-none p-4">
+                <li><a href="https://coreaviatortraining.com" class="block py-2 text-black font-bold text-sm">HOME</a></li>
+                <li>
+                    <button class="text-black font-bold text-sm py-2 flex items-center w-full">
+                        TRAINING
+                        <svg class="ml-1 w-3 h-3" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.82082 0L5 3.82082L1.17918 0L0 1.17914L5 6.17914L10 1.17914L8.82082 0Z" fill="currentColor"></path>
+                        </svg>
+                    </button>
+                    <ul class="list-none pl-4 hidden" id="mobile-training-submenu">
+                        <li><a href="https://coreaviatortraining.com/discovery-flight" class="block py-2 text-sm text-black">DISCOVERY FLIGHT</a></li>
+                        <li><a href="https://coreaviatortraining.com/international-student" class="block py-2 text-sm text-black">INTERNATIONAL STUDENT</a></li>
+                        <li><a href="https://coreaviatortraining.com/full-course-list" class="block py-2 text-sm text-black">FULL COURSE LIST</a></li>
+                        <li><a href="https://coreaviatortraining.com/financing" class="block py-2 text-sm text-black">FINANCING</a></li>
+                    </ul>
+                </li>
+                <li><a href="tel:2393507124" class="block py-2 text-black font-bold text-sm">239.350.7124</a></li>
+                <li><a href="https://coreaviatortraining.com/contact" class="block py-2 text-black font-bold text-sm">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-hero relative bg-black text-white text-center py-16">
+        <div class="absolute inset-0"></div>
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800">PRIVATE PILOT</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Info Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">COURSE INFO</h2>
+                    <div>
+                        <h5 class="text-xl font-semibold text-[#1f7ac9]">One-On-One Ground School</h5>
+                        <p class="text-gray-800 mt-2">Individual classroom for a fully focused ground lesson.</p>
+                        <h5 class="text-xl font-semibold text-[#1f7ac9] mt-6">Flexible Schedule & Payment</h5>
+                        <p class="text-gray-800 mt-2">Train on your time and flexible payment options to meet your needs.</p>
+                        <h5 class="text-xl font-semibold text-[#1f7ac9] mt-6">FAA Part 141 Approved Courses</h5>
+                        <p class="text-gray-800 mt-2">FAA Approved curriculum proven and organized fashion.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="taxi.jpg" alt="Course Info" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Become a Pilot Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">WHY BECOME A PILOT?</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="sunset.png" alt="Private Pilot" class="w-full h-auto">
+                </div>
+                <div class="md:w-1/2 text-center">
+                    <p>Becoming a pilot offers a unique combination of adventure, freedom, and professional opportunities. At Core Aviator Training LLC, earning your <em>Private Pilot License (PPL)</em> is the first step towards a life in the skies, providing the ability to fly for personal, recreational, or business purposes. With a <em>PPL</em>, you gain the freedom to travel at your own pace, avoiding the limitations of commercial flights. The Private Pilot License also opens doors to further certifications, allowing you to build a career in aviation. Additionally, pilots often experience a sense of accomplishment, enhanced decision-making skills, and access to breathtaking views while flying. With competitive salaries in commercial aviation, starting your journey at <strong><em>Core Aviator Training LLC</em></strong> equips you with the foundational skills needed for a successful aviation career, all while enjoying the excitement of taking control of an aircraft.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Timeline Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">TRAINING TIMELINE</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <h6 class="text-lg font-semibold">Ground School</h6>
+                    <p>This phase includes learning the theoretical knowledge required to become a pilot, including regulations, navigation, and weather.</p>
+                </div>
+                <div class="text-center">
+                    <h6 class="text-lg font-semibold">Flight Training</h6>
+                    <p>Flight lessons with a certified instructor, focusing on mastering aircraft control, maneuvers, and landings.</p>
+                </div>
+                <div class="text-center">
+                    <h6 class="text-lg font-semibold">Solo</h6>
+                    <p>This phase is about gaining experience flying solo and demonstrating proficiency without an instructor.</p>
+                </div>
+                <div class="text-center">
+                    <h6 class="text-lg font-semibold">Checkride</h6>
+                    <p>Preparing for the final checkride, which is a practical test to obtain the private pilot certificate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+      <section class="py-12 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+         <h4 class="text-2xl font-bold text-gray-800 text-center mb-6">Contact Us to Schedule a Flight</h4>
+	  <div class="w-full md:w-8/12 px-4 mb-8">
+        <form id="contact-form" method="POST">
+          <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <div class="form-group">
+                <label for="first-name">First Name <span class="text-red-500">*</span></label>
+                <input type="text" id="first-name" name="first-name" class="form-control" required>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <div class="form-group">
+                <label for="last-name">Last Name <span class="text-red-500">*</span></label>
+                <input type="text" id="last-name" name="last-name" class="form-control" required>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <div class="form-group">
+                <label for="email">Email Address <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-2 mb-4">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(XXX) XXX-XXXX">
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group mb-4">
+            <label>Interested In</label>
+            <div class="radio-options">
+              <div class="radio-option">
+                <input type="radio" id="discovery" name="service" value="Discovery Flight">
+                <label for="discovery">Discovery Flight</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="private" name="service" value="Private Pilot License (PPL)">
+                <label for="private">Private Pilot License (PPL)</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="instrument" name="service" value="Instrument Rating">
+                <label for="instrument">Instrument Rating</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="commercial" name="service" value="Commercial Pilot License (CPL)">
+                <label for="commercial">Commercial Pilot License (CPL)</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="review" name="service" value="Flight Reviews">
+                <label for="review">Flight Reviews</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group mb-4">
+            <label for="message">Additional Comments</label>
+            <textarea id="message" name="message" rows="5" class="form-control"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+	  
+	  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Create FormData and combine first-name and last-name into name
+      const formData = new FormData(this);
+      const firstName = formData.get('first-name') || '';
+      const lastName = formData.get('last-name') || '';
+      formData.set('name', `${firstName} ${lastName}`.trim());
+      formData.delete('first-name');
+      formData.delete('last-name');
+
+      // Debug: Log form data to console
+      const formDataObj = {};
+      for (const [key, value] of formData.entries()) {
+        formDataObj[key] = value;
+      }
+      console.log('Form Data:', formDataObj);
+
+      // Submit to Google Apps Script
+      fetch('https://script.google.com/macros/s/AKfycbygS62FgXMks1YpGqHxYwmPDjVTF0uBcdSOtQTWwGGHLrdz6KxIrJu6OmLerJwsjKQSpQ/exec', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+        .then(() => {
+          alert('Message sent successfully!');
+          this.reset();
+        })
+        .catch(error => {
+          alert('Error: ' + error.message);
+        });
+    });
+  </script>
+
+    <!-- FAQ Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h4 class="text-2xl font-bold text-gray-800 text-center mb-6">Frequently Asked Questions</h4>
+            <div class="space-y-6">
+                <div>
+                    <h5 class="text-lg font-semibold">How long is the training for Private Pilot?</h5>
+                    <p class="ml-4">Training time varies depending on the student’s training frequency. We recommend at least 3 times a week or more to those looking to accomplish the training faster. Our schedule is yours, so if you want to finish earlier or take your time, it is up to you.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold">Am I going to be in a big classroom?</h5>
+                    <p class="ml-4">No! Training is conducted one-on-one with a certified instructor. This allows you to go at your own pace without ever needing to ask questions in front of a large class.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold">What certifications does Core Aviator Training LLC hold?</h5>
+                    <p class="ml-4">Core Aviator Training LLC is a Part 61 and an FAA Part 141 Pilot School.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold">Do I get a certificate after completing 40 hrs of training?</h5>
+                    <p class="ml-4">When it comes to flying you have to reach proficiency set by the Federal Aviation Administration. If you meet the standards at 40 hours, then you can proceed to take the exam and earn the certificate. Some students require more training than others and will not finish with 40 hours. At our school, we have students who finish around 45 hours with the check ride.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold">Do you offer financing?</h5>
+                    <p class="ml-4">Our school accepts financing, but we don’t offer it ourselves. Flight Training Financing is expensive (higher interest) because the loans have no security (if you stop payments there is nothing for the bank to repose and resale). To find out more about our financing recommendation, <a href="https://coreaviatortraining.com/financing" class="text-blue-600 underline">click here</a>.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold">Do I have to pay everything upfront?</h5>
+                    <p class="ml-4">We don’t require that you pay anything in advance. Expect to pay as you go per session.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold">Do you have an enrollment fee?</h5>
+                    <p class="ml-4">Yes, our enrollment fee is $99. This covers creating your student profile, processing your student pilot certificate, and helping you with the medical application.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold">Do I have to do the TSA Flight Training Security Program (FTSP) application?</h5>
+                    <p class="ml-4">This is only a requirement if you are not a U.S. Citizen. U.S. Citizens are exempt from the TSA Flight Training Security Program.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 text-center">
+        <div class="container mx-auto px-4">
+            <div class="mb-6">
+                <a href="https://coreaviatortraining.com">
+                    <img src="logo.png" alt="Core Aviator Training LLC" class="mx-auto h-20">
+                </a>
+                <p class="text-gray-800 mt-3">Safety, Proficiency, Professionalism.</p>
+            </div>
+            <nav class="mb-6">
+                <ul class="flex flex-wrap justify-center space-x-4">
+                    <li><a href="faq.html" class="text-gray-800 hover:text-gray-600">FAQ</a></li>
+                    <li><a href="mailto:cfi@coreaviatortraining.com" class="text-gray-800 hover:text-gray-600">cfi@coreaviatortraining.com</a></li>
+                    <li><a href="tel:2393507124" class="text-gray-800 hover:text-gray-600">239.350.7124</a></li>
+                </ul>
+            </nav>
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="https://www.facebook.com/coreaviatortraining" target="_blank" rel="noopener" class="text-gray-600 hover:text-gray-800">
+                    <svg class="w-4 h-4" viewBox="0 0 320 512" fill="currentColor"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+                </a>
+                <a href="http://instagram.com/coreaviatortraining" target="_blank" rel="noopener" class="text-gray-600 hover:text-gray-800">
+                    <svg class="w-4 h-4" viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                </a>
+                <a href="https://www.youtube.com/coreaviatortraining" target="_blank" rel="noopener" class="text-gray-600 hover:text-gray-800">
+                    <svg class="w-4 h-4" viewBox="0 0 576 512" fill="currentColor"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+                </a>
+            </div>
+            <p class="text-sm text-gray-600">© 2025 Core Aviator Training LLC | All trademarks, trade names, service marks, product names, company names, logos, and brands used or mentioned herein are property of their respective owners. Mention of them does not imply any affiliation with or endorsement by them.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Mobile training submenu toggle
+        document.querySelector('#mobile-menu button').addEventListener('click', function() {
+            document.getElementById('mobile-training-submenu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
