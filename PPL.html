@@ -51,16 +51,25 @@
         .dropdown:hover .dropdown-menu {
             display: block;
         }
-		.bg-hero {
-			background-image: url('images/inflight.png');
-			background-size: cover;
-			background-position: center center;
-		}
-		@media (min-width: 768px) {
-		.bg-hero {
-			background-image: url('images/inflight.png');
-		}
-	}
+.bg-hero {
+    position: relative; /* Required for ::before positioning */
+    background-size: cover;
+    background-position: center center;
+}
+
+.bg-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/inflight.png');
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.75; /* 75% opaque = 25% transparent */
+    z-index: -1; /* Place behind content */
+}
         }
         .bg-hero::before {
             content: "";
