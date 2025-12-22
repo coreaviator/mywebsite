@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Instrument Scan Basics: How to Build a Stable Scan and Avoid Chasing the Needles. Master instrument flying techniques.">
+    <title>Instrument Scan Basics - Core Aviator Training</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/main.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SVG Icons (Hidden) -->
+    <svg style="display: none;">
+        <symbol id="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </symbol>
+        <symbol id="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </symbol>
+    </svg>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="./index.html" class="logo-container">
+                <img src="./assets/logo.png" alt="Core Aviator Training Logo" class="logo">
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./PPL.html">Private Pilot License</a></li>
+                <li><a href="./discovery-flight.html">Discovery Flight</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="https://www.google.com/search?hl=en-US&gl=us&q=Core+Aviator+Training,+607+Danley+Dr,+Fort+Myers,+FL+33807&ludocid=6964301246927414741&lsig=AB86z5XUWjMkFZhQSe4xmH83H8hW#lrd=0x88db6b8d74e2556b:0x60a62b15ebeb25d5,3" target="_blank" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Leave a Review</a></li>
+            </ul>
+            
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg><use href="#moon-icon"></use></svg>
+                </button>
+                
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Post Content -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="section-container">
+            <div class="blog-post">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">Instrument Scan Basics: How to Build a Stable Scan and Avoid Chasing the Needles</h1>
+                    <p class="blog-post-meta">
+                        <em>"Slow is smooth, smooth is fast. The key to instrument flying is a disciplined scan."</em><br>
+                        Published: December 20, 2025
+                    </p>
+                </div>
+
+                <!-- Featured Image -->
+                <div style="margin: 2rem 0;">
+                    <img src="./assets/sunset.png" alt="Aviation training at sunset - instrument flying" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                </div>
+
+                <div class="blog-post-content">
+                    <p>
+                        One of the most challenging transitions for pilots moving from VFR to IFR flying is developing an effective instrument scan. The tendency to "chase the needles"—making constant small corrections that lead to overcorrections and aircraft instability—is nearly universal among new instrument students.
+                    </p>
+
+                    <p>
+                        At Core Aviator Training, we teach a systematic approach to instrument scanning that helps pilots build stability, confidence, and precision when flying solely by reference to instruments. Whether you're pursuing your instrument rating or simply want to be a safer VFR pilot in marginal conditions, mastering the instrument scan is essential.
+                    </p>
+
+                    <h2>Understanding the Fundamental Principle</h2>
+
+                    <p>
+                        Before we dive into scan techniques, it's critical to understand one fundamental principle:
+                    </p>
+
+                    <blockquote style="border-left: 4px solid var(--primary-blue); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--text-secondary);">
+                        <strong>The instruments lag behind the aircraft.</strong> When you make a control input, the aircraft begins to respond immediately, but the instruments take time to register and display that change (with the exception of attitude indicator).
+                    </blockquote>
+
+                    <p>
+                        This delay is what causes pilots to chase the needles. When you understand this lag, you can make smooth, deliberate inputs and allow time for the aircraft to respond and stabilize before making additional corrections.
+                    </p>
+
+                    <h2>The Primary and Supporting Instruments Concept</h2>
+
+                    <p>
+                        Not all instruments are created equal for every phase of flight. For any given maneuver or flight condition, certain instruments provide primary information, while others offer supporting data.
+                    </p>
+
+                    <h3>Control and Performance Method</h3>
+
+                    <p>
+                        The most effective approach to instrument flying uses the <strong>Control and Performance</strong> method:
+                    </p>
+
+                    <ul>
+                        <li><strong>Control Instruments:</strong> Tell you the aircraft's attitude (primarily the attitude indicator)</li>
+                        <li><strong>Performance Instruments:</strong> Tell you the result of that attitude (airspeed, altitude, heading, vertical speed, turn coordinator)</li>
+                    </ul>
+
+                    <h3>The "Four Fundamentals" of Instrument Flying:</h3>
+
+                    <ol>
+                        <li><strong>Pitch Control:</strong> Primarily controlled by the attitude indicator, verified by altimeter and vertical speed</li>
+                        <li><strong>Bank Control:</strong> Primarily controlled by attitude indicator, verified by heading indicator and turn coordinator</li>
+                        <li><strong>Power Control:</strong> Primarily controlled by throttle, verified by airspeed indicator and tachometer/manifold pressure</li>
+                        <li><strong>Trim:</strong> Used to relieve control pressures once desired performance is achieved</li>
+                    </ol>
+
+                    <h2>Building Your Scan Pattern</h2>
+
+                    <p>
+                        An effective instrument scan is not random. It follows a deliberate pattern that ensures you're gathering all necessary information while maintaining situational awareness.
+                    </p>
+
+                    <h3>The "Hub and Spoke" or "Radial" Scan</h3>
+
+                    <p>
+                        This is the most commonly taught and effective scan pattern:
+                    </p>
+
+                    <ul>
+                        <li><strong>Hub:</strong> The attitude indicator serves as the hub of your scan</li>
+                        <li><strong>Spokes:</strong> From the attitude indicator, you radiate out to check other instruments, always returning to the attitude indicator</li>
+                    </ul>
+
+                    <p><strong>Example scan pattern for straight and level flight:</strong></p>
+                    <ol>
+                        <li>Attitude Indicator (establish pitch and bank)</li>
+                        <li>Heading Indicator (check heading)</li>
+                        <li>Attitude Indicator (return to hub)</li>
+                        <li>Altimeter (check altitude)</li>
+                        <li>Attitude Indicator (return to hub)</li>
+                        <li>Airspeed Indicator (check airspeed)</li>
+                        <li>Attitude Indicator (return to hub)</li>
+                        <li>Vertical Speed Indicator (check trend)</li>
+                        <li>Attitude Indicator (return to hub)</li>
+                        <li>Repeat cycle</li>
+                    </ol>
+
+                    <p>
+                        The key is that you always return to the attitude indicator. It's your primary reference for aircraft control.
+                    </p>
+
+                    <h3>Scan Rate: Finding the Right Rhythm</h3>
+
+                    <p>
+                        New instrument pilots often make two critical errors:
+                    </p>
+
+                    <ol>
+                        <li><strong>Scanning too fast:</strong> Glancing at instruments without actually reading and interpreting them</li>
+                        <li><strong>Fixating too long:</strong> Staring at one instrument while the aircraft attitude changes</li>
+                    </ol>
+
+                    <p>
+                        The proper scan rate allows you to:
+                    </p>
+                    <ul>
+                        <li>Register what each instrument is showing</li>
+                        <li>Interpret trend information (is altitude increasing or decreasing?)</li>
+                        <li>Make control inputs when needed</li>
+                        <li>Return to the attitude indicator before the aircraft attitude changes significantly</li>
+                    </ul>
+
+                    <p>
+                        <strong>Rule of thumb:</strong> Spend approximately 1-2 seconds on each instrument during the scan, with slightly more time on the attitude indicator as your "home base."
+                    </p>
+
+                    <h2>Common Scan Errors and How to Fix Them</h2>
+
+                    <h3>1. Fixation</h3>
+
+                    <p><strong>Problem:</strong> Staring at one instrument for too long, usually because something is wrong or changing. Very common, but can't become habit.</p>
+
+                    <p><strong>Solution:</strong> Force yourself to continue the scan pattern even when one instrument shows a deviation. Trust that you'll return to it quickly and that the attitude indicator will show you if immediate correction is needed.</p>
+
+                    <h3>2. Omission</h3>
+
+                    <p><strong>Problem:</strong> Skipping instruments in your scan, usually because you're task-saturated or focused on a specific problem.</p>
+
+                    <p><strong>Solution:</strong> Deliberately practice scan patterns on the ground and in the simulator. Verbalize your scan out loud: "Attitude...heading...attitude...altitude..." This helps ingrain the pattern.</p>
+
+                    <h3>3. Emphasis</h3>
+
+                    <p><strong>Problem:</strong> Placing too much emphasis on one area of the panel while neglecting others.</p>
+
+                    <p><strong>Solution:</strong> Remember that for each phase of flight, different instruments are primary. In level flight, altitude is critical; in a turn, heading and bank are primary. Adjust your emphasis appropriately.</p>
+
+                    <h2>The "Big Four" Scan for Different Flight Conditions</h2>
+
+                    <p>
+                        While a complete scan includes all instruments, certain instruments are particularly important for specific phases of flight:
+                    </p>
+
+                    <h3>Straight and Level Flight</h3>
+                    <ul>
+                        <li><strong>Primary:</strong> Attitude Indicator (for pitch), Heading Indicator, Altimeter</li>
+                        <li><strong>Supporting:</strong> Airspeed, Vertical Speed, Turn Coordinator</li>
+                    </ul>
+
+                    <h3>Climbs and Descents</h3>
+                    <ul>
+                        <li><strong>Primary:</strong> Attitude Indicator (for pitch), Airspeed Indicator, Heading Indicator</li>
+                        <li><strong>Supporting:</strong> Vertical Speed, Altimeter (becomes primary as you approach target altitude)</li>
+                    </ul>
+
+                    <h3>Turns</h3>
+                    <ul>
+                        <li><strong>Primary:</strong> Attitude Indicator (for bank), Turn Coordinator, Heading Indicator</li>
+                        <li><strong>Supporting:</strong> Altimeter (to maintain altitude), Airspeed</li>
+                    </ul>
+
+                    <h3>Approach and Landing</h3>
+                    <ul>
+                        <li><strong>Primary:</strong> Attitude Indicator, Airspeed, Course Deviation (Localizer/GPS), Glideslope/VSI</li>
+                        <li><strong>Supporting:</strong> Altimeter (for step-down fixes), Heading, DME/GPS distance</li>
+                    </ul>
+
+                    <h2>Avoiding the "Chase": The Key to Stability</h2>
+
+                    <p>
+                        "Chasing the needles" happens when pilots make continuous small corrections without allowing the aircraft time to stabilize. Here's how to avoid it:
+                    </p>
+
+                    <h3>1. Establish a Target Attitude</h3>
+
+                    <p>
+                        Instead of chasing specific altitudes or headings, set a pitch and bank attitude that should produce the desired result, then <strong>wait and observe</strong>. CoreAviator describes it as "feathering the controls."
+                    </p>
+
+                    <p><strong>Example for level flight:</strong></p>
+                    <ul>
+                        <li>Set pitch attitude (perhaps 2-3 degrees nose up for cruise)</li>
+                        <li>Set power to cruise setting</li>
+                        <li>Wait 5-10 seconds</li>
+                        <li>Check performance instruments (altitude, airspeed)</li>
+                        <li>Make small pitch adjustment if needed (feathering)</li>
+                        <li>Wait again and observe</li>
+                    </ul>
+
+                    <h3>2. Use the "Five Second Rule"</h3>
+
+                    <p>
+                        After making any control input, wait at least five seconds before making another correction (unless safety requires immediate action). This gives the aircraft time to respond and settle.
+                    </p>
+
+                    <h3>3. Small Inputs, Big Patience</h3>
+
+                    <p>
+                        Make small, smooth control inputs—usually half of what you think you need. Then wait and see. If more correction is needed, add a bit more. But never make large, abrupt inputs except in unusual attitudes or emergencies. Professionals have mastered this feathering technique, so a change is almost unnoticeable.
+                    </p>
+
+                    <h3>4. Trim Aggressively</h3>
+
+                    <p>
+                        Once you've established the desired performance, trim the aircraft until it maintains that performance hands-off. This removes control pressure and allows you to focus on scanning rather than fighting the aircraft. Lets quickly balance those forces.
+                    </p>
+
+                    <blockquote style="border-left: 4px solid var(--primary-blue); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--text-secondary);">
+                        "Fly the attitude, trim the aircraft, and the performance will take care of itself."
+                    </blockquote>
+
+                    <h2>Scan Development Exercises</h2>
+
+                    <p>
+                        Like any skill, your instrument scan improves with deliberate practice. Here are some exercises we use with students at Core Aviator Training:
+                    </p>
+
+                    <h3>1. Chair Flying</h3>
+
+                    <p>
+                        Sit in a chair with a picture or poster of an instrument panel. Practice your scan pattern, verbalizing each instrument as you "look" at it. This builds muscle memory and helps ingrain the scan pattern.
+                    </p>
+
+                    <h3>2. Simulator Practice</h3>
+
+                    <p>
+                        Use a home flight simulator (like X-Plane 12) to practice scan patterns in various flight conditions. The advantage is unlimited practice without cost or risk.
+                    </p>
+
+                    <p><strong>Specific exercises:</strong></p>
+                    <ul>
+                        <li>Maintain altitude within 50 feet for 5 minutes</li>
+                        <li>Hold a heading within 2 degrees for 5 minutes</li>
+                        <li>Track a VOR radial or GPS course</li>
+                        <li>Fly a full ILS approach</li>
+                    </ul>
+
+                    <h3>3. Partial Panel Practice</h3>
+
+                    <p>
+                        Cover your attitude indicator (simulating a failure) and practice maintaining control using only the turn coordinator and other instruments. This forces you to develop alternative scan patterns and improves overall instrument awareness.
+                    </p>
+
+                    <h3>4. Scan Verbalization</h3>
+
+                    <p>
+                        During actual flight or simulator sessions, verbalize your scan: "Attitude is level, wings level...heading is 090...returning to attitude...altitude is 3,500 holding..." 
+                    </p>
+
+                    <p>
+                        This seems tedious but it's incredibly effective for building a systematic scan pattern. This approach is exactly what successful pilots implement.
+                    </p>
+
+                    <h2>Advanced Scan Concepts</h2>
+
+                    <h3>Selective Radial Scan</h3>
+
+                    <p>
+                        As you gain experience, you'll develop a more efficient scan that emphasizes the most critical instruments for your current phase of flight while still monitoring all instruments.
+                    </p>
+
+                    <p>
+                        For example, during an ILS approach, your scan might look like:
+                    </p>
+
+                    <ul>
+                        <li>Attitude Indicator</li>
+                        <li>Localizer</li>
+                        <li>Attitude Indicator</li>
+                        <li>Glideslope</li>
+                        <li>Attitude Indicator</li>
+                        <li>Airspeed</li>
+                        <li>Attitude Indicator</li>
+                        <li>Altimeter</li>
+                        <li>Attitude Indicator</li>
+                        <li>Localizer</li>
+                        <li>Continue...</li>
+                    </ul>
+
+                    <p>
+                        Notice the increased emphasis on navigation instruments while still returning to the attitude indicator regularly.
+                    </p>
+
+                    <h3>Trend Flying</h3>
+
+                    <p>
+                        Expert instrument pilots don't just look at current indications—they anticipate trends and make corrections before deviations become large.
+                    </p>
+
+                    <ul>
+                        <li>Altitude trending down? Make a small pitch adjustment now, before you're 100 feet low</li>
+                        <li>Heading drifting right? Small bank correction before you're 10 degrees off</li>
+                        <li>Airspeed increasing? Slight pitch up or power reduction now</li>
+                    </ul>
+
+                    <h2>Real-World Application: The Instrument Approach</h2>
+
+                    <p>
+                        Let's put everything together with a practical example—flying an ILS approach:
+                    </p>
+
+                    <h3>1. Before the Final Approach Fix</h3>
+                    <ul>
+                        <li>Configure aircraft (gear down, flaps as required)</li>
+                        <li>Establish approach speed</li>
+                        <li>Set pitch attitude for level flight at approach speed</li>
+                        <li>Trim aircraft completely</li>
+                        <li>Brief the approach (minimums, missed approach procedure)</li>
+                    </ul>
+
+                    <h3>2. Intercepting the Glideslope</h3>
+                    <ul>
+                        <li>As glideslope needle centers, reduce power to descent power setting</li>
+                        <li>Lower nose to establish descent attitude (typically 2.5-3 degrees)</li>
+                        <li>Begin scan: Attitude → Localizer → Attitude → Glideslope → Attitude → Airspeed → Attitude</li>
+                        <li>Small corrections to keep needles centered</li>
+                        <li>Verify descent rate (typically 500-700 fpm for a 3-degree glideslope at 90 knots)</li>
+                    </ul>
+
+                    <h3>3. Final Approach Segment</h3>
+                    <ul>
+                        <li>Continue scan pattern</li>
+                        <li>Call out step-down fixes</li>
+                        <li>Monitor altitude with distance</li>
+                        <li>Make small pitch and bank corrections to stay on glideslope and localizer</li>
+                        <li>At decision altitude: look up for the runway (if visual) or execute missed approach</li>
+                    </ul>
+
+                    <h2>Building Long-Term Competency</h2>
+
+                    <p>
+                        Developing a stable, effective instrument scan is not a one-time achievement—it requires ongoing practice and refinement:
+                    </p>
+
+                    <ul>
+                        <li><strong>Fly regularly:</strong> Instrument skills deteriorate quickly; aim for at least monthly practice</li>
+                        <li><strong>Use a safety pilot or instructor:</strong> Have someone critique your scan and technique</li>
+                        <li><strong>Practice in VMC first:</strong> Build confidence and technique in good weather before attempting actual IMC</li>
+                        <li><strong>Review after every flight:</strong> What worked? What needs improvement? What will you practice next time?</li>
+                        <li><strong>Stay current on procedures:</strong> Approach procedures, clearances, and regulations change; stay updated</li>
+                    </ul>
+
+                    <h2>Conclusion: Mastery Through Systematic Practice</h2>
+
+                    <p>
+                        The difference between an uncomfortable instrument pilot who chases needles and a smooth, confident instrument pilot who maintains stable flight is not talent—it's technique and practice.
+                    </p>
+
+                    <p>
+                        By developing a systematic scan pattern, understanding the relationship between control inputs and aircraft response, and practicing regularly, you can build the skills needed for safe, confident instrument flight.
+                    </p>
+
+                    <p>
+                        Remember these key principles:
+                    </p>
+
+                    <ul>
+                        <li>Always return to the attitude indicator</li>
+                        <li>Make small inputs and wait for the aircraft to respond</li>
+                        <li>Trim aggressively to remove control pressures</li>
+                        <li>Develop a systematic scan pattern and stick to it</li>
+                        <li>Practice regularly to maintain proficiency</li>
+                    </ul>
+
+                    <p>
+                        At Core Aviator Training, we specialize in helping pilots develop solid instrument skills from the ground up. Whether you're pursuing your instrument rating or just want to improve your IFR proficiency, we can help you build a stable scan and fly with confidence.
+                    </p>
+
+                    <p style="margin-top: 2rem;">
+                        <strong>Fly smooth, fly stable, and always trust your instruments.</strong><br>
+                        -CoreAviator
+                    </p>
+
+                    <p style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--border-color);">
+                        <em>Safety, Proficiency, Professionalism.</em>
+                    </p>
+
+                    <div style="margin-top: 3rem; text-align: center;">
+                        <a href="./contact.html" class="btn btn-primary">Start Your Instrument Training</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Posts Section -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Related Articles</h2>
+            </div>
+            
+            <div class="blog-grid animate-on-scroll">
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('./assets/DSC_0056-Enhanced-NR.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="blog-content">
+                        <p class="blog-date">November 27, 2025</p>
+                        <h3 class="blog-title">4-Step Roadmap to Private Pilot License Success</h3>
+                        <a href="./roadmap_private_pilot_license.html" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('./assets/coast.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="blog-content">
+                        <p class="blog-date">December 15, 2025</p>
+                        <h3 class="blog-title">Weather Decision-Making: A Practical Go/No-Go Framework</h3>
+                        <a href="./weather-decision-making.html" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Core Aviator Training</h4>
+                    <p>Safety, Proficiency, Professionalism.</p>
+                    <p style="margin-top: 1rem;">
+                        Page Field Airport<br>
+                        Fort Myers, FL 33907
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="./index.html">Home</a></p>
+                    <p><a href="./PPL.html">Private Pilot License</a></p>
+                    <p><a href="./discovery-flight.html">Discovery Flight</a></p>
+                    <p><a href="./blog.html">Blog</a></p>
+                    <p><a href="./contact.html">Contact</a></p>
+                    <p><a href="./privacy-policy.html">Privacy Policy</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <img src="./assets/email-contact.png" alt="Email Contact" class="contact-image">
+                    <img src="./assets/phone-contact.png" alt="Phone Contact" class="contact-image">
+                    
+                    <h4 style="margin-top: 1.5rem;">Business Hours</h4>
+                    <p>Monday - Saturday: 7AM - 6PM<br>
+                    Sunday: By Appointment</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/coreaviatortraining" target="_blank" class="social-icon" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/coreaviatortraining" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Core Aviator Training LLC. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">All trademarks, trade names, service marks, product names, company names, logos, and brands used or mentioned herein are property of their respective owners. Mention of them does not imply any affiliation with or endorsement by them.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
