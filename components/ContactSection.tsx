@@ -7,6 +7,7 @@ const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     goal: 'Discovery Flight',
     message: ''
   });
@@ -117,6 +118,18 @@ const ContactSection: React.FC = () => {
                       type="email" 
                       className="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-2xl px-6 py-4 focus:ring-4 focus:ring-primary/20 focus:outline-none dark:text-white" 
                       placeholder="wings@sky.com" 
+                    />
+                  </div>
+                  <div className="md:col-span-2 space-y-3">
+                    <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Phone Number</label>
+                    <input 
+                      required
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      type="tel" 
+                      className="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-2xl px-6 py-4 focus:ring-4 focus:ring-primary/20 focus:outline-none dark:text-white" 
+                      placeholder="(239) 000-0000" 
                     />
                   </div>
                   <div className="md:col-span-2 space-y-3">
