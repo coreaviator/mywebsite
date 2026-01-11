@@ -18,6 +18,7 @@ const App: React.FC = () => {
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // Handle Dark Mode
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
@@ -25,6 +26,11 @@ const App: React.FC = () => {
       document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
+
+  // Handle Scroll to Top on page change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -37,9 +43,6 @@ const App: React.FC = () => {
         <div className="animate-fadeIn">
           <Hero onCtaClick={() => setCurrentPage('discovery')} />
           <ServicesGrid onNavigate={setCurrentPage} />
-          <div className="py-24 bg-white dark:bg-slate-900 transition-colors">
-            <TrainingPrograms onNavigate={setCurrentPage} />
-          </div>
           <Features />
           <div className="bg-gradient-to-r from-secondary to-primary py-24 text-white text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[100px] rounded-full"></div>

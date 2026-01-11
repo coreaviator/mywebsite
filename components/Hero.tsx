@@ -7,7 +7,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   return (
-    <div className="relative min-h-[95vh] flex items-center overflow-hidden pt-12">
+    <div className="relative min-h-[95vh] flex items-center overflow-hidden pt-24 md:pt-12">
       {/* Dynamic Background with Mesh Effect */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -24,13 +24,14 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl flex flex-col items-start">
+            {/* Adjusted pill for mobile visibility */}
             <div className="inline-flex items-center space-x-2 bg-primary/10 dark:bg-primary/20 backdrop-blur-md px-4 py-2 rounded-2xl border border-primary/20 mb-8 animate-slideIn">
               <i className="fas fa-location-dot text-primary animate-bounce"></i>
-              <span className="text-xs font-extrabold tracking-widest uppercase text-primary dark:text-primary">Based at Page Field (FMY)</span>
+              <span className="text-[10px] md:text-xs font-extrabold tracking-widest uppercase text-primary dark:text-primary whitespace-nowrap">Based at Page Field (FMY)</span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter dark:text-white">
+            <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter dark:text-white">
               Write Your <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Own Horizon.</span>
             </h1>
@@ -39,7 +40,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               Personalized flight training in our signature <strong>Piper Cherokee 140</strong>. Master the skies with the character and precision of a true aviator.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-5">
+            <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
               <button 
                 onClick={onCtaClick}
                 className="group px-10 py-5 bg-gradient-to-r from-primary to-secondary text-white rounded-3xl font-black text-lg transition-all shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-1"
@@ -54,10 +55,10 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             <div className="mt-16 flex items-center space-x-8">
               <div className="flex -space-x-3">
                 {[1,2,3,4].map(i => (
-                  <img key={i} src={`https://i.pravatar.cc/100?u=${i}`} className="w-12 h-12 rounded-2xl border-4 border-white dark:border-slate-900 object-cover" alt="Student" />
+                  <img key={i} src={`https://i.pravatar.cc/100?u=${i}`} className="w-10 h-10 md:w-12 md:h-12 rounded-2xl border-4 border-white dark:border-slate-900 object-cover" alt="Student" />
                 ))}
               </div>
-              <div className="text-sm font-bold text-slate-500 dark:text-slate-400">
+              <div className="text-xs md:text-sm font-bold text-slate-500 dark:text-slate-400">
                 <span className="text-slate-900 dark:text-white block">Elite Student Community</span>
                 50+ Safe Solo Pilots in Fort Myers
               </div>
@@ -82,14 +83,14 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
       <style>{`
         @keyframes slideIn {
-          from { transform: translateX(-50px); opacity: 0; }
+          from { transform: translateX(-30px); opacity: 0; }
           to { transform: translateX(0); opacity: 1; }
         }
         @keyframes float {
           0%, 100% { transform: translateY(0) rotate(0); }
           50% { transform: translateY(-20px) rotate(5deg); }
         }
-        .animate-slideIn { animation: slideIn 0.8s ease-out; }
+        .animate-slideIn { animation: slideIn 0.8s ease-out forwards; }
         .animate-float { animation: float 6s infinite ease-in-out; }
       `}</style>
     </div>
