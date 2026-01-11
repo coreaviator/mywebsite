@@ -72,10 +72,30 @@ const Footer: React.FC<FooterProps> = ({ onPageChange, onReviewClick }) => {
         </div>
 
         <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-xs font-bold text-slate-500 uppercase tracking-widest">
-          <p>© {new Date().getFullYear()} Core Aviator Training. Florida's Premier Boutique Flight School.</p>
+          <div className="flex flex-col space-y-4 text-center md:text-left mb-8 md:mb-0">
+            <p>© {new Date().getFullYear()} Core Aviator Training. Florida's Premier Boutique Flight School.</p>
+            
+            {/* Pronounced "Powered by" section */}
+            <div className="inline-flex items-center">
+               <a 
+                 href="https://stratusmarketingllc.com/" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 className="group flex items-center space-x-3 bg-white/5 border border-white/10 px-5 py-2.5 rounded-2xl hover:bg-white/10 hover:border-primary/50 transition-all duration-300 shadow-lg"
+               >
+                 <span className="text-[10px] text-slate-400 font-black uppercase tracking-widest">Powered by</span>
+                 <div className="flex items-center">
+                    <span className="text-sm font-black text-white group-hover:text-primary transition-colors tracking-tight">Stratus Marketing</span>
+                    <span className="ml-1 text-[10px] text-primary group-hover:text-white transition-colors">LLC</span>
+                    <i className="fas fa-external-link-alt ml-3 text-[10px] opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                 </div>
+               </a>
+            </div>
+          </div>
+          
           <div className="flex space-x-8 mt-6 md:mt-0">
-            <a href="#" className="hover:text-primary">Safety Record</a>
-            <a href="#" className="hover:text-primary">FAA Compliance</a>
+            <a href="#" className="hover:text-primary transition-colors">Safety Record</a>
+            <a href="#" className="hover:text-primary transition-colors">FAA Compliance</a>
           </div>
         </div>
       </div>
