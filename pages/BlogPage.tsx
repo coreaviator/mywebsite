@@ -179,10 +179,10 @@ const BlogPage: React.FC = () => {
   if (selectedArticle) {
     return (
       <div className="animate-fadeIn pb-32">
-        <section className="relative h-[60vh] bg-slate-950 flex items-end">
+        <section className="relative h-[60vh] bg-slate-50 dark:bg-slate-950 flex items-end overflow-hidden transition-colors">
           <div className="absolute inset-0 z-0">
-            <img src={selectedArticle.image} className="w-full h-full object-cover opacity-40" alt={selectedArticle.title} />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <img src={selectedArticle.image} className="w-full h-full object-cover opacity-10 dark:opacity-40" alt={selectedArticle.title} />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-slate-50/40 to-transparent dark:from-slate-950 dark:via-slate-950/40 dark:to-transparent"></div>
           </div>
           <div className="container mx-auto px-6 relative z-10 pb-16">
             <button 
@@ -191,30 +191,30 @@ const BlogPage: React.FC = () => {
             >
               <i className="fas fa-arrow-left mr-2"></i> Back to Journal
             </button>
-            <span className="bg-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-white mb-6 inline-block">
+            <span className="bg-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-white mb-6 inline-block shadow-lg">
               {selectedArticle.category}
             </span>
-            <h1 className="text-4xl md:text-7xl font-black text-white leading-tight max-w-4xl tracking-tighter">
+            <h1 className="text-4xl md:text-7xl font-black text-slate-900 dark:text-white leading-tight max-w-4xl tracking-tighter">
               {selectedArticle.title}
             </h1>
-            <div className="flex items-center mt-8 space-x-6 text-slate-400 font-bold text-sm uppercase tracking-widest">
+            <div className="flex items-center mt-8 space-x-6 text-slate-500 dark:text-slate-400 font-bold text-sm uppercase tracking-widest">
               <span>{selectedArticle.date}</span>
-              <span className="w-1 h-1 bg-slate-700 rounded-full"></span>
+              <span className="w-1 h-1 bg-slate-300 dark:bg-slate-700 rounded-full"></span>
               <span>{selectedArticle.readTime}</span>
             </div>
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-20 bg-white dark:bg-slate-950 transition-colors">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto">
               <div 
-                className="prose prose-xl dark:prose-invert prose-slate prose-headings:font-black prose-headings:tracking-tight prose-a:text-primary dark:text-slate-300 font-medium leading-relaxed article-content"
+                className="prose prose-xl dark:prose-invert prose-slate prose-headings:font-black prose-headings:tracking-tight prose-a:text-primary text-slate-700 dark:text-slate-300 font-medium leading-relaxed article-content"
                 dangerouslySetInnerHTML={{ __html: selectedArticle.content }}
               />
               <div className="mt-20 pt-12 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
                 <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl">
+                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl shadow-xl">
                     <i className="fas fa-user-pilot"></i>
                   </div>
                   <div>
@@ -247,26 +247,26 @@ const BlogPage: React.FC = () => {
 
   return (
     <div className="animate-fadeIn">
-      <section className="relative py-32 bg-slate-950 text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-mesh opacity-20"></div>
+      <section className="relative py-32 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden transition-colors">
+        <div className="absolute inset-0 z-0 bg-mesh opacity-30 dark:opacity-20"></div>
         <div className="container mx-auto px-6 relative z-10 text-center">
           <h2 className="text-primary font-black tracking-[0.3em] uppercase text-xs mb-4">Pilot Perspectives</h2>
           <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter">
             Aviator's <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Journal.</span>
           </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">
             Insights, technical tips, and stories from the cockpit at Page Field.
           </p>
         </div>
       </section>
 
-      <section className="py-24 bg-slate-50 dark:bg-slate-950 transition-colors">
+      <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {ARTICLES.map((article) => (
               <div 
                 key={article.id} 
-                className="group bg-white dark:bg-slate-900 rounded-[3rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
+                className="group bg-slate-50 dark:bg-slate-900 rounded-[3rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
               >
                 <div className="h-64 overflow-hidden relative">
                   <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />

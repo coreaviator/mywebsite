@@ -33,28 +33,28 @@ const PPLPage: React.FC = () => {
   return (
     <div className="animate-fadeIn">
       {/* Dynamic Header */}
-      <section className="relative py-32 md:py-48 bg-slate-950 overflow-hidden">
+      <section className="relative py-32 md:py-48 bg-slate-50 dark:bg-slate-950 overflow-hidden transition-colors">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=2400" 
-            className="w-full h-full object-cover opacity-20 scale-105"
+            className="w-full h-full object-cover opacity-10 dark:opacity-20 scale-105"
             alt="Cockpit View" 
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-950/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-slate-50 via-slate-50/80 to-transparent dark:from-slate-950 dark:via-slate-950/80"></div>
           <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 blur-[150px] rounded-full animate-pulse"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center space-x-3 bg-primary/20 backdrop-blur-xl border border-primary/30 px-6 py-2 rounded-2xl mb-10">
+            <div className="inline-flex items-center space-x-3 bg-primary/10 dark:bg-primary/20 backdrop-blur-xl border border-primary/30 px-6 py-2 rounded-2xl mb-10">
               <i className="fas fa-certificate text-primary animate-spin-slow"></i>
               <span className="text-xs font-black uppercase tracking-[0.4em] text-primary">Gold Standard Certification</span>
             </div>
-            <h1 className="text-6xl md:text-9xl font-black text-white leading-[0.85] tracking-tighter mb-8">
+            <h1 className="text-6xl md:text-9xl font-black text-slate-900 dark:text-white leading-[0.85] tracking-tighter mb-8">
               Private Pilot <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Autonomy.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-400 font-medium max-w-2xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-medium max-w-2xl leading-relaxed">
               Earn the key to the skies. Our PPL program at Page Field transforms you from a passenger into a commander of the clouds.
             </p>
           </div>
@@ -66,7 +66,7 @@ const PPLPage: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {requirements.map((req, i) => (
-              <div key={i} className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-2xl border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center">
+              <div key={i} className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-2xl border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center transition-colors">
                 <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-4">
                   <i className={`fas ${req.icon} text-xl`}></i>
                 </div>
@@ -79,7 +79,7 @@ const PPLPage: React.FC = () => {
       </section>
 
       {/* Program Deep Dive */}
-      <section className="py-32">
+      <section className="py-32 bg-white dark:bg-slate-950 transition-colors">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-24 items-center mb-32">
             <div>
@@ -112,10 +112,10 @@ const PPLPage: React.FC = () => {
               <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full group-hover:bg-primary/30 transition-all"></div>
               <img 
                 src="https://images.unsplash.com/photo-1559135197-8a45ea74d367?q=80&w=1200" 
-                className="relative z-10 rounded-[4rem] shadow-2xl border-4 border-white dark:border-slate-800"
+                className="relative z-10 rounded-[4rem] shadow-2xl border-4 border-white dark:border-slate-800 transition-colors"
                 alt="Pilot in Training"
               />
-              <div className="absolute -bottom-10 -right-10 z-20 bg-white dark:bg-slate-900 p-8 rounded-[3rem] shadow-2xl border border-slate-100 dark:border-slate-800 max-w-xs animate-float">
+              <div className="absolute -bottom-10 -right-10 z-20 bg-white dark:bg-slate-900 p-8 rounded-[3rem] shadow-2xl border border-slate-100 dark:border-slate-800 max-w-xs animate-float transition-colors">
                 <div className="flex items-center space-x-4 mb-3">
                   <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-white">
                     <i className="fas fa-star"></i>
@@ -128,13 +128,13 @@ const PPLPage: React.FC = () => {
           </div>
 
           {/* Training Milestones */}
-          <div className="bg-slate-900 dark:bg-slate-900/50 rounded-[5rem] p-12 md:p-24 text-white">
+          <div className="bg-slate-100 dark:bg-slate-900/50 rounded-[5rem] p-12 md:p-24 text-slate-900 dark:text-white transition-colors">
             <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20">
               <div className="max-w-xl">
                 <h2 className="text-primary font-black tracking-[0.3em] uppercase text-xs mb-4">The Pathway</h2>
                 <h3 className="text-4xl md:text-5xl font-black">Major Milestones.</h3>
               </div>
-              <p className="text-slate-400 font-medium text-lg max-w-sm">
+              <p className="text-slate-500 dark:text-slate-400 font-medium text-lg max-w-sm">
                 Structured phases designed to build your confidence and technical skill set from zero to hero.
               </p>
             </div>
@@ -143,14 +143,14 @@ const PPLPage: React.FC = () => {
               <div className="hidden md:block absolute top-10 left-0 w-full h-px bg-gradient-to-r from-primary/50 via-secondary/50 to-transparent"></div>
               {milestones.map((m, i) => (
                 <div key={i} className="relative z-10 group">
-                  <div className="w-20 h-20 bg-slate-800 border-4 border-slate-900 rounded-[2rem] flex items-center justify-center mb-8 shadow-xl group-hover:border-primary transition-all">
+                  <div className="w-20 h-20 bg-white dark:bg-slate-800 border-4 border-slate-200 dark:border-slate-900 rounded-[2rem] flex items-center justify-center mb-8 shadow-xl group-hover:border-primary transition-all">
                     <span className="text-2xl font-black text-primary">{m.step}</span>
                   </div>
-                  <h4 className="text-2xl font-black mb-4 group-hover:text-primary transition-colors">{m.title}</h4>
-                  <p className="text-slate-400 font-medium mb-6 leading-relaxed">{m.desc}</p>
+                  <h4 className="text-2xl font-black mb-4 group-hover:text-primary transition-colors text-slate-900 dark:text-white">{m.title}</h4>
+                  <p className="text-slate-600 dark:text-slate-400 font-medium mb-6 leading-relaxed">{m.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {m.tags.map((tag, j) => (
-                      <span key={j} className="text-[10px] font-black uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full text-slate-300">
+                      <span key={j} className="text-[10px] font-black uppercase tracking-widest bg-slate-200 dark:bg-white/5 px-3 py-1 rounded-full text-slate-600 dark:text-slate-300 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -163,7 +163,7 @@ const PPLPage: React.FC = () => {
       </section>
 
       {/* Conversion Section */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-950">
+      <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto bg-gradient-to-br from-primary to-secondary rounded-[4rem] p-12 md:p-24 text-white text-center relative overflow-hidden shadow-2xl shadow-primary/20">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">

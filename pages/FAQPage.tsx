@@ -38,10 +38,10 @@ const FAQPage: React.FC = () => {
   return (
     <div className="animate-fadeIn">
       {/* Header Section */}
-      <section className="relative py-32 bg-slate-950 text-white overflow-hidden">
+      <section className="relative py-32 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden transition-colors">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-mesh opacity-30"></div>
-          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
+          <div className="absolute inset-0 bg-mesh opacity-30 dark:opacity-20"></div>
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -49,14 +49,14 @@ const FAQPage: React.FC = () => {
           <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter">
             Clear Skies, <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Clear Answers.</span>
           </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">
             Everything you need to know before stepping into the cockpit at Page Field.
           </p>
         </div>
       </section>
 
       {/* FAQ Accordion Section */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-950 transition-colors">
+      <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="space-y-6">
             {faqs.map((faq, i) => (
@@ -64,8 +64,8 @@ const FAQPage: React.FC = () => {
                 key={i} 
                 className={`group border rounded-[2.5rem] transition-all duration-500 ${
                   openIdx === i 
-                    ? 'bg-white dark:bg-slate-900 border-primary shadow-2xl shadow-primary/10' 
-                    : 'bg-white/50 dark:bg-slate-900/30 border-slate-200 dark:border-slate-800 hover:border-primary/40'
+                    ? 'bg-slate-50 dark:bg-slate-900 border-primary shadow-2xl shadow-primary/10' 
+                    : 'bg-white dark:bg-slate-900/30 border-slate-200 dark:border-slate-800 hover:border-primary/40'
                 }`}
               >
                 <button 
@@ -101,7 +101,7 @@ const FAQPage: React.FC = () => {
           {/* Contact Support Card */}
           <div className="mt-24 relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-[4rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <div className="relative bg-white dark:bg-slate-900 p-12 md:p-20 rounded-[4rem] border border-slate-100 dark:border-slate-800 text-center shadow-xl">
+            <div className="relative bg-white dark:bg-slate-900 p-12 md:p-20 rounded-[4rem] border border-slate-200 dark:border-slate-800 text-center shadow-xl transition-colors">
               <div className="w-20 h-20 bg-primary/10 text-primary rounded-[2rem] flex items-center justify-center mx-auto mb-8">
                 <i className="fas fa-headset text-3xl"></i>
               </div>
@@ -124,7 +124,7 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* Decorative Bottom Mesh */}
-      <div className="h-64 bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
+      <div className="h-64 bg-white dark:bg-slate-950 relative overflow-hidden transition-colors">
         <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[100%] bg-primary/5 blur-[120px] rounded-full"></div>
         <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[100%] bg-secondary/5 blur-[120px] rounded-full"></div>
       </div>
