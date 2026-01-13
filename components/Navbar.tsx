@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 
 interface NavbarProps {
@@ -8,98 +9,108 @@ interface NavbarProps {
   toggleDarkMode: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ 
-  onPageChange, 
-  currentPage, 
-  onReviewClick, 
-  isDarkMode, 
-  toggleDarkMode 
-}) => {
+const Navbar: React.FC<NavbarProps> = ({ onPageChange, currentPage, onReviewClick, isDarkMode, toggleDarkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Handle scroll effect for navbar background
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (page: string) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    onPageChange(page);
-  };
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'ppl', label: 'Private Pilot' },
+    { id: 'discovery', label: 'Discovery' },
+    { id: 'blog', label: 'Blog' },
+    { id: 'faq', label: 'FAQs' },
+    { id: 'contact', label: 'Contact' },
+  ];
+
+  const activeStyles = "text-primary dark:text-primary";
+  const inactiveStyles = isDarkMode ? "text-slate-300 hover:text-white" : "text-slate-700 hover:text-primary";
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-md py-3 shadow-lg' 
-        : 'bg-transparent py-5'
-    }`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo Replacement */}
-        <div 
-          className="cursor-pointer flex items-center" 
-          onClick={() => handleNavClick('home')}
-        >
-          <img 
-            src="assets/flat_logo_transparent.png" 
-            alt="Core Aviator" 
-            className="h-10 md:h-12 w-auto" 
-          />
-        </div>
+    <div className="fixed w-full z-50 px-4 py-4 pointer-events-none">
+      <nav className={`container mx-auto max-w-7xl rounded-full glass-nav transition-all duration-500 pointer-events-auto border ${
+        isScrolled 
+          ? (isDarkMode ? 'bg-slate-900/80 border-slate-700 shadow-2xl' : 'bg-white/80 border-slate-200 shadow-xl') 
+          : (isDarkMode ? 'bg-slate-950/20 border-white/10' : 'bg-white/40 border-black/5')
+      }`}>
+        <div className="flex justify-between items-center px-6 py-3">
+          {/* Logo */}
+          <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => onPageChange('home')}>
+            <div className="bg-gradient-to-br from-primary to-secondary p-2.5 rounded-2xl shadow-lg group-hover:rotate-6 transition-transform">
+              <i className="fas fa-plane-up text-white text-xl"></i>
+            </div>
+            <div className="flex flex-col -space-y-1">
+              <span className={`text-xl font-black tracking-tighter ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+                CORE <span className="text-primary">AVIATOR</span>
+              </span>
+              <span className={`text-[9px] font-bold tracking-[0.3em] uppercase ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Training</span>
+            </div>
+          </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          <button 
-            onClick={() => handleNavClick('ppl')}
-            className={`font-bold text-sm uppercase tracking-widest transition-colors ${
-              currentPage === 'ppl' ? 'text-blue-600' : 'hover:text-blue-500'
-            }`}
-          >
-            Private Pilot
-          </button>
-          <button 
-            onClick={() => handleNavClick('discovery')}
-            className={`font-bold text-sm uppercase tracking-widest transition-colors ${
-              currentPage === 'discovery' ? 'text-blue-600' : 'hover:text-blue-500'
-            }`}
-          >
-            Discovery Flight
-          </button>
-          <button 
-            onClick={() => handleNavClick('blog')}
-            className={`font-bold text-sm uppercase tracking-widest transition-colors ${
-              currentPage === 'blog' ? 'text-blue-600' : 'hover:text-blue-500'
-            }`}
-          >
-            Blog
-          </button>
-          
-          <div className="h-6 w-[1px] bg-slate-300 dark:bg-slate-700 mx-2" />
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center space-x-1">
+            {navItems.map(item => (
+              <button
+                key={item.id}
+                onClick={() => onPageChange(item.id)}
+                className={`px-4 py-2 rounded-full font-bold text-sm transition-all ${
+                  currentPage === item.id ? activeStyles : inactiveStyles
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+            
+            <div className="h-6 w-[1px] bg-slate-400/20 mx-2"></div>
 
-          <button 
-            onClick={toggleDarkMode}
-            className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-          >
-            {isDarkMode ? '🌞' : '🌙'}
-          </button>
-          
-          <button 
-            onClick={() => handleNavClick('contact')}
-            className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-blue-700 transition-all hover:shadow-lg"
-          >
-            Contact
+            <button 
+              onClick={toggleDarkMode}
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+                isDarkMode ? 'bg-slate-800 text-yellow-400' : 'bg-slate-100 text-slate-600'
+              }`}
+            >
+              <i className={`fas ${isDarkMode ? 'fa-sun' : 'fa-moon'}`}></i>
+            </button>
+
+            <button 
+              onClick={onReviewClick}
+              className="ml-4 px-6 py-2.5 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-black text-xs shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all hover:-translate-y-0.5"
+            >
+              LEAVE REVIEW
+            </button>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button className="lg:hidden text-2xl p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'} ${isDarkMode ? 'text-white' : 'text-slate-900'}`}></i>
           </button>
         </div>
 
-        {/* Mobile Menu Icon (Simplified for this rewrite) */}
-        <div className="md:hidden">
-          <button onClick={() => handleNavClick('home')} className="text-2xl">☰</button>
-        </div>
-      </div>
-    </nav>
+        {/* Mobile Dropdown */}
+        {isMobileMenuOpen && (
+          <div className={`lg:hidden rounded-b-[2rem] p-6 flex flex-col space-y-4 animate-fadeIn border-t ${
+            isDarkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-100'
+          }`}>
+            {navItems.map(item => (
+              <button key={item.id} onClick={() => { onPageChange(item.id); setIsMobileMenuOpen(false); }} className={`text-left font-bold text-lg ${currentPage === item.id ? 'text-primary' : (isDarkMode ? 'text-white' : 'text-slate-800')}`}>
+                {item.label}
+              </button>
+            ))}
+            <div className="flex justify-between items-center pt-4 border-t border-slate-200 dark:border-slate-800">
+              <button onClick={toggleDarkMode} className="p-3 bg-slate-100 dark:bg-slate-800 rounded-xl">
+                 <i className={`fas ${isDarkMode ? 'fa-sun' : 'fa-moon'} ${isDarkMode ? 'text-yellow-400' : 'text-slate-600'}`}></i>
+              </button>
+              <button onClick={() => { onReviewClick(); setIsMobileMenuOpen(false); }} className="flex-grow ml-4 py-3 bg-primary text-white font-bold rounded-xl shadow-lg">Leave Review</button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </div>
   );
 };
 
