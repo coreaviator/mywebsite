@@ -153,7 +153,13 @@ const DiscoveryPage: React.FC = () => {
                 <p className="text-slate-500 dark:text-slate-400 font-medium mb-10 leading-relaxed">
                   The most affordable way to see if aviation is your calling. No long-term commitment required.
                 </p>
-                <button className="w-full py-5 bg-gradient-to-r from-primary to-secondary text-white rounded-2xl font-black text-lg shadow-xl shadow-primary/30 hover:shadow-primary/50 transition-all hover:-translate-y-1">
+                <button
+                  onClick={() => {
+                    window.dispatchEvent(new CustomEvent('navigate', { detail: 'contact' }));
+                    window.history.pushState({ page: 'contact' }, '', '/contact');
+                  }}
+                  className="w-full py-5 bg-gradient-to-r from-primary to-secondary text-white rounded-2xl font-black text-lg shadow-xl shadow-primary/30 hover:shadow-primary/50 transition-all hover:-translate-y-1"
+                >
                   RESERVE YOUR SLOT
                 </button>
                 <p className="mt-6 text-xs font-bold text-slate-400 uppercase tracking-widest">
@@ -176,10 +182,26 @@ const DiscoveryPage: React.FC = () => {
             The view from the cockpit changes everything. Join us at the Page Field General Aviation terminal and start your story.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <button className="px-12 py-5 bg-slate-900 dark:bg-white dark:text-slate-900 text-white rounded-3xl font-black text-lg transition-all hover:bg-primary hover:text-white">
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent('navigate', { detail: 'contact' }));
+                window.history.pushState({ page: 'contact' }, '', '/contact');
+              }}
+              className="px-12 py-5 bg-slate-900 dark:bg-white dark:text-slate-900 text-white rounded-3xl font-black text-lg transition-all hover:bg-primary hover:text-white"
+            >
               CONTACT ADMISSIONS
             </button>
-            <button className="px-12 py-5 border-2 border-slate-200 dark:border-slate-800 rounded-3xl font-black text-lg text-slate-900 dark:text-white hover:border-primary transition-all">
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent('navigate', { detail: 'home' }));
+                window.history.pushState({ page: 'home' }, '', '/');
+                setTimeout(() => {
+                  const el = document.getElementById('built-for-excellence');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="px-12 py-5 border-2 border-slate-200 dark:border-slate-800 rounded-3xl font-black text-lg text-slate-900 dark:text-white hover:border-primary transition-all"
+            >
               VIEW OTHER PROGRAMS
             </button>
           </div>

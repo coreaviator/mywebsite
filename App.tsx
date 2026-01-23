@@ -9,9 +9,12 @@ import PPLPage from './pages/PPLPage';
 import DiscoveryPage from './pages/DiscoveryPage';
 import BlogPage from './pages/BlogPage';
 import FAQPage from './pages/FAQPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
 import ContactSection from './components/ContactSection';
 import ReviewModal from './components/ReviewModal';
 import Footer from './components/Footer';
+import popupInstructor from './assets/popup_instructor.png';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -27,6 +30,41 @@ const App: React.FC = () => {
     }
   }, [isDarkMode]);
 
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      if (event.state && event.state.page) {
+        if (event.state.page === 'blog' && currentPage === 'blog') {
+          setBlogKey(prev => prev + 1);
+        }
+        setCurrentPage(event.state.page);
+      } else {
+        // Default to home if no state
+        setCurrentPage('home');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    // Initial state if needed
+    if (!window.history.state) {
+      window.history.replaceState({ page: 'home' }, '', '');
+    }
+
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [currentPage]);
+
+  useEffect(() => {
+    // Listen for custom navigation events from components
+    const handleNavigate = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      handlePageChange(detail);
+    };
+
+    window.addEventListener('navigate', handleNavigate);
+    return () => window.removeEventListener('navigate', handleNavigate);
+  }, [currentPage]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage, blogKey]);
@@ -36,6 +74,7 @@ const App: React.FC = () => {
       setBlogKey(prev => prev + 1);
     }
     setCurrentPage(page);
+    window.history.pushState({ page }, '', `/${page === 'home' ? '' : page}`);
   };
 
   const renderPage = () => {
@@ -44,29 +83,37 @@ const App: React.FC = () => {
       case 'discovery': return <DiscoveryPage />;
       case 'blog': return <BlogPage key={blogKey} />;
       case 'faq': return <FAQPage />;
-      case 'contact': return <ContactSection />;
+      case 'contact': return <ContactSection onNavigate={handlePageChange} />;
+      case 'privacy': return <PrivacyPolicyPage />;
+      case 'terms': return <TermsOfServicePage />;
       default: return (
         <div className="animate-fadeIn">
-          <Hero onCtaClick={() => setCurrentPage('discovery')} />
-          <ServicesGrid onNavigate={setCurrentPage} />
-          <div className="py-24 bg-white dark:bg-slate-900 transition-colors">
-            <TrainingPrograms onNavigate={setCurrentPage} />
+          <Hero onCtaClick={() => handlePageChange('contact')} />
+          <div id="built-for-excellence">
+            <ServicesGrid onNavigate={handlePageChange} />
           </div>
           <Features />
-          <div className="bg-gradient-to-r from-secondary to-primary py-24 text-white text-center relative overflow-hidden">
+          <div className="bg-gradient-to-r from-secondary to-primary py-12 md:py-24 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[100px] rounded-full"></div>
-            <div className="container mx-auto px-4 relative z-10">
-              <h2 className="text-4xl md:text-5xl font-black mb-6">Ready to Master the Skies?</h2>
-              <p className="mb-10 opacity-90 max-w-2xl mx-auto font-medium text-lg italic">
-                "The engine is the heart of an airplane, but the pilot is its soul."
-              </p>
-              <button onClick={() => setCurrentPage('discovery')} className="bg-white text-secondary px-12 py-5 rounded-full font-black hover:scale-105 transition-transform shadow-2xl text-lg">
-                Schedule Your Discovery Flight
-              </button>
+            <div className="container mx-auto px-6 relative z-10">
+              <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="w-full md:w-1/2 text-left">
+                  <h2 className="text-4xl md:text-5xl font-black mb-6">Ready to Master the Skies?</h2>
+                  <p className="mb-10 opacity-90 font-medium text-lg italic max-w-xl">
+                    "The engine is the heart of an airplane, but the pilot is its soul."
+                  </p>
+                  <button onClick={() => handlePageChange('contact')} className="bg-white text-secondary px-12 py-5 rounded-full font-black hover:scale-105 transition-transform shadow-2xl text-lg">
+                    Schedule Your Discovery Flight
+                  </button>
+                </div>
+                <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+                  <img src={popupInstructor} alt="Core Aviator Instructor" className="w-full max-w-md object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+                </div>
+              </div>
             </div>
           </div>
           <div id="contact-home">
-            <ContactSection />
+            <ContactSection onNavigate={handlePageChange} />
           </div>
         </div>
       );

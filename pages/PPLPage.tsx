@@ -2,6 +2,7 @@
 import React from 'react';
 import stock from '../assets/stock.jpg';
 import hangar from '../assets/hangar.jpg';
+import handshake from '../assets/handshake.png';
 
 const PPLPage: React.FC = () => {
   const requirements = [
@@ -177,16 +178,78 @@ const PPLPage: React.FC = () => {
                 Ready to take the first step towards your Private Pilot License? Our admissions team is standing by to schedule your consultation.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <button className="px-12 py-5 bg-white text-secondary rounded-3xl font-black text-lg shadow-xl hover:scale-105 transition-transform active:scale-95">
+                <button
+                  onClick={() => {
+                    window.dispatchEvent(new CustomEvent('navigate', { detail: 'contact' }));
+                    window.history.pushState({ page: 'contact' }, '', '/contact');
+                  }}
+                  className="px-12 py-5 bg-white text-secondary rounded-3xl font-black text-lg shadow-xl hover:scale-105 transition-transform active:scale-95"
+                >
                   Request Info Packet
                 </button>
-                <button className="px-12 py-5 bg-slate-900 text-white rounded-3xl font-black text-lg shadow-xl hover:bg-slate-800 transition-all">
+                <button
+                  onClick={() => {
+                    window.dispatchEvent(new CustomEvent('navigate', { detail: 'contact' }));
+                    window.history.pushState({ page: 'contact' }, '', '/contact');
+                  }}
+                  className="px-12 py-5 bg-slate-900 text-white rounded-3xl font-black text-lg shadow-xl hover:bg-slate-800 transition-all"
+                >
                   Book Consultation
                 </button>
               </div>
               <p className="mt-10 text-xs font-black uppercase tracking-[0.4em] opacity-70">
                 Operating Out of FMY General Aviation Terminal
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Promo Section */}
+      <section className="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <h2 className="text-secondary font-black tracking-[0.2em] uppercase text-xs mb-4">Expert Insight</h2>
+              <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
+                Want Level-Headed Guidance on How to Succeed?
+              </h3>
+              <p className="text-slate-500 dark:text-slate-400 text-xl font-medium mb-8">
+                Check out our latest article on the proven roadmap to earning your wings.
+              </p>
+              <div className="w-24 h-1 bg-primary rounded-full"></div>
+            </div>
+
+            <div className="lg:w-1/2 w-full">
+              {/* Blog Card Replica */}
+              <div className="group cursor-pointer bg-white dark:bg-slate-900 rounded-[2.5rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2" onClick={() => {
+                window.dispatchEvent(new CustomEvent('navigate', { detail: 'blog' }));
+                window.history.pushState({ page: 'blog' }, '', '/blog');
+              }}>
+                <div className="h-64 overflow-hidden relative">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-slate-900 px-4 py-2 rounded-xl text-xs font-black uppercase tracking-widest z-10">
+                    PPL Guide
+                  </div>
+                  <img src={handshake} alt="Blog Post" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div className="p-8 md:p-10">
+                  <div className="flex items-center text-xs font-bold text-slate-400 mb-4 space-x-4">
+                    <span><i className="far fa-calendar mr-2"></i>Nov 27, 2025</span>
+                    <span><i className="far fa-clock mr-2"></i>8 min read</span>
+                  </div>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors">
+                    4-Step Roadmap to Private Pilot License Success
+                  </h3>
+                  <p className="text-slate-500 dark:text-slate-400 font-medium mb-8 line-clamp-3">
+                    In the skies, you don't get what's handed to you, you get what you train for. Discover the proven path to certification.
+                  </p>
+                  <button
+                    className="text-primary font-black text-sm tracking-widest uppercase group-hover:translate-x-2 transition-transform inline-flex items-center"
+                  >
+                    READ ARTICLE <i className="fas fa-arrow-right ml-2"></i>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
