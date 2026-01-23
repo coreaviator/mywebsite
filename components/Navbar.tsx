@@ -35,13 +35,14 @@ const Navbar: React.FC<NavbarProps> = ({ onPageChange, currentPage, onReviewClic
   return (
     <div className="fixed w-full z-50 px-4 py-4 pointer-events-none">
       <nav className={`container mx-auto max-w-7xl rounded-full glass-nav transition-all duration-500 pointer-events-auto border ${isScrolled
-          ? (isDarkMode ? 'bg-slate-900/80 border-slate-700 shadow-2xl' : 'bg-white/80 border-slate-200 shadow-xl')
-          : (isDarkMode ? 'bg-slate-950/20 border-white/10' : 'bg-white/40 border-black/5')
+        ? (isDarkMode ? 'bg-slate-900/80 border-slate-700 shadow-2xl' : 'bg-white/80 border-slate-200 shadow-xl')
+        : (isDarkMode ? 'bg-slate-950/20 border-white/10' : 'bg-white/40 border-black/5')
         }`}>
         <div className="flex justify-between items-center px-6 py-3">
           {/* Logo */}
           <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => onPageChange('home')}>
             <img src={logo} alt="Core Aviator" className="h-14 w-auto object-contain transition-transform group-hover:scale-105" />
+            <span className="font-black text-xl tracking-tight text-slate-900 dark:text-white uppercase hidden sm:block">Core Aviator Training</span>
           </div>
 
           {/* Desktop Nav */}

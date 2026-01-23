@@ -44,7 +44,6 @@ const Footer: React.FC<FooterProps> = ({ onPageChange, onReviewClick }) => {
           <div>
             <h4 className="text-lg font-black mb-8 text-primary uppercase tracking-widest">Navigation</h4>
             <ul className="space-y-5 text-slate-400 font-bold">
-              <li><button onClick={() => onPageChange('home')} className="hover:text-white transition-colors">Sky Lobby</button></li>
               <li><button onClick={() => onPageChange('ppl')} className="hover:text-white transition-colors">Private Pilot</button></li>
               <li><button onClick={() => onPageChange('discovery')} className="hover:text-white transition-colors">Discovery Flight</button></li>
               <li><button onClick={() => onPageChange('blog')} className="hover:text-white transition-colors">Aviator Blog</button></li>
@@ -55,7 +54,8 @@ const Footer: React.FC<FooterProps> = ({ onPageChange, onReviewClick }) => {
             <h4 className="text-lg font-black mb-8 text-secondary uppercase tracking-widest">Support</h4>
             <ul className="space-y-5 text-slate-400 font-bold">
               <li><button onClick={() => onPageChange('faq')} className="hover:text-white transition-colors">Common Questions</button></li>
-              <li><button onClick={() => onPageChange('contact')} className="hover:text-white transition-colors">Flight Desk</button></li>
+              <li><button onClick={() => onPageChange('privacy')} className="hover:text-white transition-colors">Privacy Policy</button></li>
+              <li><button onClick={() => onPageChange('terms')} className="hover:text-white transition-colors">Terms of Service</button></li>
               <li><button onClick={onReviewClick} className="hover:text-white transition-colors text-left">Leave Feedback</button></li>
             </ul>
           </div>

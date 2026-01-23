@@ -8,20 +8,22 @@ interface ServicesGridProps {
 const ServiceCard: React.FC<{ title: string, desc: string, icon: string, target: string, onNavigate: (p: string) => void, accent: string }> = ({ title, desc, icon, target, onNavigate, accent }) => (
   <div className="group relative bg-white dark:bg-slate-900 p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
     <div className={`absolute top-0 right-0 w-32 h-32 bg-${accent}-500/5 dark:bg-${accent}-500/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700`}></div>
-    
+
     <div className="relative z-10">
       <div className={`w-16 h-16 bg-${accent}-500 text-white rounded-[1.25rem] flex items-center justify-center mb-8 shadow-lg shadow-${accent}-500/20 group-hover:rotate-12 transition-transform`}>
         <i className={`fas ${icon} text-2xl`}></i>
       </div>
       <h3 className="text-2xl font-black mb-4 text-slate-900 dark:text-white group-hover:text-primary transition-colors">{title}</h3>
       <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">{desc}</p>
-      
-      <button 
-        onClick={() => onNavigate(target)}
-        className="inline-flex items-center font-black text-sm text-primary group-hover:translate-x-2 transition-transform"
-      >
-        EXPLORE PROGRAM <i className="fas fa-arrow-right ml-2 text-xs"></i>
-      </button>
+
+      {['Discovery Flight', 'Private Pilot (PPL)'].includes(title) && (
+        <button
+          onClick={() => onNavigate(target)}
+          className="inline-flex items-center font-black text-sm text-primary group-hover:translate-x-2 transition-transform"
+        >
+          EXPLORE PROGRAM <i className="fas fa-arrow-right ml-2 text-xs"></i>
+        </button>
+      )}
     </div>
   </div>
 );
@@ -49,22 +51,22 @@ const ServicesGrid: React.FC<ServicesGridProps> = ({ onNavigate }) => {
             From your very first takeoff to professional certification, we provide the structured mentorship you need.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((s, i) => (
             <ServiceCard key={i} {...s} accent={s.accent === 'primary' ? 'primary' : 'secondary'} onNavigate={onNavigate} />
           ))}
-          
+
           <div className="relative group p-1 bg-gradient-to-br from-primary to-secondary rounded-[3rem] shadow-xl overflow-hidden cursor-pointer" onClick={() => onNavigate('contact')}>
             <div className="bg-slate-900 dark:bg-slate-900 h-full w-full rounded-[2.9rem] p-10 flex flex-col justify-center text-white">
-               <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:rotate-12 transition-transform">
-                 <i className="fas fa-paper-plane text-7xl"></i>
-               </div>
-               <h4 className="text-3xl font-black mb-4">Custom Training</h4>
-               <p className="text-slate-400 font-medium mb-8">Need a specific endorsement or refresher training? We tailor plans for every aviator.</p>
-               <button className="w-max px-8 py-3 bg-white text-slate-900 rounded-2xl font-black text-sm hover:bg-primary hover:text-white transition-all">
-                 ENROLL NOW
-               </button>
+              <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:rotate-12 transition-transform">
+                <i className="fas fa-paper-plane text-7xl"></i>
+              </div>
+              <h4 className="text-3xl font-black mb-4">Custom Training</h4>
+              <p className="text-slate-400 font-medium mb-8">Need a specific endorsement or refresher training? We tailor plans for every aviator.</p>
+              <button className="w-max px-8 py-3 bg-white text-slate-900 rounded-2xl font-black text-sm hover:bg-primary hover:text-white transition-all">
+                ENROLL NOW
+              </button>
             </div>
           </div>
         </div>
