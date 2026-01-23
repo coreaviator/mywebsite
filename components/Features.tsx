@@ -22,14 +22,14 @@ const Features: React.FC = () => {
           <div className="lg:col-span-5">
             <h2 className="text-secondary font-black tracking-[0.2em] uppercase text-xs mb-4">The Core Philosophy</h2>
             <h3 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] mb-8">
-              Training with <br/><span className="text-primary">Character.</span>
+              Training with <br /><span className="text-primary">Character.</span>
             </h3>
             <p className="text-slate-600 dark:text-slate-300 text-lg font-medium leading-relaxed mb-10">
               We believe flight training should be as inspiring as the flight itself. That's why we focus on high-quality 1-on-1 sessions in our signature Piper Cherokee 140.
             </p>
             <div className="space-y-6">
               {[
-                { label: "Elite Safety Protocol", icon: "fa-shield-check" },
+                { label: "Elite Safety Protocol", icon: "fa-shield-halved" },
                 { label: "Top 5% National Airport", icon: "fa-trophy" },
                 { label: "No Shared Cockpit Policy", icon: "fa-user-group" }
               ].map((item, idx) => (
@@ -44,27 +44,27 @@ const Features: React.FC = () => {
           </div>
 
           <div className="lg:col-span-7 grid md:grid-cols-2 gap-8">
-            <FeatureCard 
-              icon="fa-location-dot" 
-              title="Page Field Advantage" 
+            <FeatureCard
+              icon="fa-location-dot"
+              title="Page Field Advantage"
               color="primary"
               desc="Train at a world-class facility that offers professional tower communication and diverse air traffic experience."
             />
-            <FeatureCard 
-              icon="fa-plane" 
-              title="The Cherokee 140" 
+            <FeatureCard
+              icon="fa-plane"
+              title="The Cherokee 140"
               color="secondary"
               desc="The quintessential flight trainer. Stable, reliable, and maintained to the most rigorous safety standards."
             />
-            <FeatureCard 
-              icon="fa-id-card" 
-              title="FAA Verified Paths" 
+            <FeatureCard
+              icon="fa-id-card"
+              title="FAA Verified Paths"
               color="secondary"
               desc="Our curriculum meets and exceeds all FAA standards, ensuring you're prepared for the real world."
             />
-            <FeatureCard 
-              icon="fa-sun" 
-              title="Florida Flying" 
+            <FeatureCard
+              icon="fa-sun"
+              title="Florida Flying"
               color="primary"
               desc="Maximize your hours with 300+ days of flyable weather in the stunning Fort Myers coastal environment."
             />

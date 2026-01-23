@@ -1,5 +1,8 @@
 
 import React from 'react';
+import handshake from '../assets/handshake.png';
+import coast from '../assets/coast.jpg';
+import discoveryImg from '../assets/DSC_0156-Enhanced-NR.jpg';
 
 interface TrainingProgramsProps {
   onNavigate: (page: string) => void;
@@ -26,7 +29,7 @@ const ProgramCard: React.FC<{ image: string, title: string, price: string, featu
           </li>
         ))}
       </ul>
-      <button 
+      <button
         onClick={() => onNavigate(target)}
         className="w-full py-5 bg-gradient-to-r from-primary to-secondary text-white rounded-2xl font-black text-lg hover:shadow-xl hover:shadow-primary/20 transition-all active:scale-95"
       >
@@ -42,7 +45,7 @@ const TrainingPrograms: React.FC<TrainingProgramsProps> = ({ onNavigate }) => {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
         <div className="max-w-xl">
           <h2 className="text-primary font-black tracking-[0.2em] uppercase text-xs mb-4">Professional Curriculum</h2>
-          <h3 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-[1.1]">Elite Training <br/><span className="text-secondary dark:text-primary">Programs.</span></h3>
+          <h3 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-[1.1]">Elite Training <br /><span className="text-secondary dark:text-primary">Programs.</span></h3>
         </div>
         <p className="text-slate-500 dark:text-slate-400 max-w-sm text-lg font-medium leading-relaxed">
           Based at Page Field Airport (FMY), our training exceeds FAA standards in the world's most trusted trainer.
@@ -50,8 +53,8 @@ const TrainingPrograms: React.FC<TrainingProgramsProps> = ({ onNavigate }) => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        <ProgramCard 
-          image="https://images.unsplash.com/photo-1559135197-8a45ea74d367?q=80&w=1200"
+        <ProgramCard
+          image={handshake}
           title="Private Pilot (PPL)"
           price="Foundation"
           target="ppl"
@@ -63,8 +66,8 @@ const TrainingPrograms: React.FC<TrainingProgramsProps> = ({ onNavigate }) => {
             "Cross-Country Navigation"
           ]}
         />
-        <ProgramCard 
-          image="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200"
+        <ProgramCard
+          image={coast}
           title="Instrument Rating"
           price="Precision"
           target="ppl"
@@ -76,8 +79,8 @@ const TrainingPrograms: React.FC<TrainingProgramsProps> = ({ onNavigate }) => {
             "Weather Decision Skills"
           ]}
         />
-        <ProgramCard 
-          image="https://images.unsplash.com/photo-1520437358207-323b43b50729?q=80&w=1200"
+        <ProgramCard
+          image={discoveryImg}
           title="Discovery Flight"
           price="Takeoff"
           target="discovery"

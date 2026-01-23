@@ -15,10 +15,10 @@ import Footer from './components/Footer';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
+  const [blogKey, setBlogKey] = useState(0);
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Handle Dark Mode
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
@@ -27,22 +27,31 @@ const App: React.FC = () => {
     }
   }, [isDarkMode]);
 
-  // Handle Scroll to Top on page change
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPage]);
+    window.scrollTo(0, 0);
+  }, [currentPage, blogKey]);
+
+  const handlePageChange = (page: string) => {
+    if (page === 'blog' && currentPage === 'blog') {
+      setBlogKey(prev => prev + 1);
+    }
+    setCurrentPage(page);
+  };
 
   const renderPage = () => {
     switch (currentPage) {
       case 'ppl': return <PPLPage />;
       case 'discovery': return <DiscoveryPage />;
-      case 'blog': return <BlogPage />;
+      case 'blog': return <BlogPage key={blogKey} />;
       case 'faq': return <FAQPage />;
       case 'contact': return <ContactSection />;
       default: return (
         <div className="animate-fadeIn">
           <Hero onCtaClick={() => setCurrentPage('discovery')} />
           <ServicesGrid onNavigate={setCurrentPage} />
+          <div className="py-24 bg-white dark:bg-slate-900 transition-colors">
+            <TrainingPrograms onNavigate={setCurrentPage} />
+          </div>
           <Features />
           <div className="bg-gradient-to-r from-secondary to-primary py-24 text-white text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[100px] rounded-full"></div>
@@ -66,9 +75,9 @@ const App: React.FC = () => {
 
   return (
     <div className={`flex flex-col min-h-screen transition-colors duration-500 ${isDarkMode ? 'bg-slate-950 text-white' : 'bg-slate-50 text-slate-900'}`}>
-      <Navbar 
-        onPageChange={setCurrentPage} 
-        currentPage={currentPage} 
+      <Navbar
+        onPageChange={handlePageChange}
+        currentPage={currentPage}
         onReviewClick={() => setIsReviewModalOpen(true)}
         isDarkMode={isDarkMode}
         toggleDarkMode={() => setIsDarkMode(!isDarkMode)}
@@ -76,7 +85,7 @@ const App: React.FC = () => {
       <main className="flex-grow">
         {renderPage()}
       </main>
-      <Footer onPageChange={setCurrentPage} onReviewClick={() => setIsReviewModalOpen(true)} />
+      <Footer onPageChange={handlePageChange} onReviewClick={() => setIsReviewModalOpen(true)} />
       {isReviewModalOpen && <ReviewModal onClose={() => setIsReviewModalOpen(false)} />}
     </div>
   );
