@@ -14,6 +14,7 @@ import TermsOfServicePage from './pages/TermsOfServicePage';
 import ContactSection from './components/ContactSection';
 import ReviewModal from './components/ReviewModal';
 import Footer from './components/Footer';
+import Cherokee140Page from './pages/Cherokee140Page';
 import popupInstructor from './assets/popup_instructor.png';
 
 const App: React.FC = () => {
@@ -86,9 +87,10 @@ const App: React.FC = () => {
       case 'contact': return <ContactSection onNavigate={handlePageChange} />;
       case 'privacy': return <PrivacyPolicyPage />;
       case 'terms': return <TermsOfServicePage />;
+      case 'cherokee-140': return <Cherokee140Page />;
       default: return (
         <div className="animate-fadeIn">
-          <Hero onCtaClick={() => handlePageChange('contact')} />
+          <Hero onCtaClick={() => handlePageChange('contact')} onNavigate={handlePageChange} />
           <div id="built-for-excellence">
             <ServicesGrid onNavigate={handlePageChange} />
           </div>
