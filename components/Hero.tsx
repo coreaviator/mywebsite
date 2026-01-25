@@ -9,9 +9,10 @@ import student4 from '../assets/student4.png';
 
 interface HeroProps {
   onCtaClick: () => void;
+  onNavigate: (page: string) => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
+const Hero: React.FC<HeroProps> = ({ onCtaClick, onNavigate }) => {
   return (
     <div className="relative min-h-[95vh] flex items-center overflow-hidden pt-12">
       {/* Dynamic Background with Mesh Effect */}
@@ -52,7 +53,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               >
                 Book Discovery Flight <i className="fas fa-chevron-right ml-2 group-hover:translate-x-1 transition-transform"></i>
               </button>
-              <button className="px-10 py-5 bg-white dark:bg-slate-800 dark:text-white dark:border-slate-700 border border-slate-200 rounded-3xl font-black text-lg transition-all hover:bg-slate-50 dark:hover:bg-slate-700 shadow-xl">
+              <button onClick={() => onNavigate('cherokee-140')} className="px-10 py-5 bg-white dark:bg-slate-800 dark:text-white dark:border-slate-700 border border-slate-200 rounded-3xl font-black text-lg transition-all hover:bg-slate-50 dark:hover:bg-slate-700 shadow-xl">
                 The Cherokee 140
               </button>
             </div>
@@ -81,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                   <img src={silhouette} className="w-full h-full object-contain animate-float" alt="Piper Cherokee Silhouette" />
                 </div>
                 <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-2 leading-tight">Piper Cherokee</h3>
-                <p className="text-primary font-black tracking-widest uppercase text-sm">TRK 140 • FMY</p>
+                <p className="text-primary font-black tracking-widest uppercase text-sm">140 • FMY</p>
               </div>
             </div>
           </div>
